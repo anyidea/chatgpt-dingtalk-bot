@@ -1,0 +1,105 @@
+[tool.poetry]
+name = "chatgpt-dingtalk-bot"
+version = "0.1.0"
+homepage = "https://github.com/anyidea/chatgpt-dingtalk-bot"
+description = "A dingtalk chatbot powered by chatGPT.."
+authors = ["Aiden Lu <allaher@icloud.com>"]
+readme = "README.md"
+license =  "MIT"
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+]
+packages = [
+    { include = "chatbot" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8.*,<4.0"
+click = "8.1.3"
+fastapi = "^0.89.1"
+revchatgpt = "^1.1.5"
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+
+[tool.poetry.group.dev.dependencies]
+tox = "^3.27.0"
+pre-commit = "^2.19.0"
+virtualenv = "^20.16.5"
+pip = "^22.3.1"
+twine = "^4.0.1"
+toml = "^0.10.2"
+commitizen = "^2.37.0"
+
+[tool.poetry.group.test.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+mypy = "^0.990"
+flake8 = "^5.0.4"
+flake8-docstrings = "^1.6.0"
+
+[tool.poetry.group.doc.dependencies]
+mkdocs  = ">=1.4.2"
+jieba = ">=0.42.1"
+mkdocs-material = ">=8.5.9"
+mkdocstrings = { version=">=0.19.0", extras=["python"] }
+mkdocs-awesome-pages-plugin = ">=2.8.0"
+mkdocs-include-markdown-plugin = ">=3.9.1"
+mkdocs-static-i18n = ">=0.50"
+mkdocs-material-extensions = ">=1.1.1"
+pymdown-extensions = ">=9.8"
+pygments = ">=2.13.0"
+
+[tool.poetry.scripts]
+chatgpt-dingtalk-bot = 'chatbot.cli:main'
+
+[tool.black]
+line-length = 88
+skip-string-normalization = true
+target-version = ['py38', 'py39', 'py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+skip_gitignore = true
+# you can skip files as below
+#skip_glob = docs/conf.py
+
+[tool.commitizen]
+version = "0.1.0"
+tag_format = "v$major.$minor.$patch$prerelease"
+version_files = [
+    "pyproject.toml:version",
+    "demo_project/__init__.py"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

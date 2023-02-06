@@ -1,0 +1,142 @@
+# Project information
+site_name: chatgpt-dingtalk-bot
+site_url: https://anyidea.github.io/chatgpt-dingtalk-bot
+site_author: Aiden Lu
+site_description: >-
+  A dingtalk chatbot powered by chatGPT.
+
+# Repository
+repo_url: https://github.com/anyidea/chatgpt-dingtalk-bot
+repo_name: anyidea/chatgpt-dingtalk-bot
+
+# Copyright
+# copyright: Copyright &copy; 2021 - 2022 Aiden Lu
+
+# Configuration
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  #logo: assets/logo.png
+  features:
+    # - announce.dismiss
+    - content.code.annotate
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  #favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+# Plugins
+plugins:
+  - include-markdown
+  - mkdocstrings
+  - blog
+  - search
+  - i18n:
+      default_language: en
+      languages:
+        en: English
+        zh: 中文
+
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/twitter
+      # replace with your own tweet link below
+      link: https://github.com/waynerv/cookiecutter-pypackage
+      name: Tweet
+    - icon: fontawesome/brands/facebook
+      link: https://github.com/wccdev/cookiecutter-pypackage
+      name: Facebook
+    - icon: fontawesome/brands/github
+      link: https://github.com/anyidea/chatgpt-dingtalk-bot
+      name: Github
+    - icon: material/email
+      link: "mailto:allaher@icloud.com"
+
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - meta
+
+
+# Page tree
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Modules: api.md
+  - Contributing: contributing.md
+  - Changelog: changelog.md

@@ -1,7 +1,6 @@
 # chatgpt-dingtalk-bot
 
 
-[![Pypi](https://img.shields.io/pypi/v/chatgpt-dingtalk-bot.svg)](https://pypi.org/project/chatgpt-dingtalk-bot/)
 [![License](https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot)](https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE)
 [![Python](https://img.shields.io/pypi/pyversions/chatgpt-dingtalk-bot.svg)](https://pypi.org/project/chatgpt-dingtalk-bot/)
 [![Build Status](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml)

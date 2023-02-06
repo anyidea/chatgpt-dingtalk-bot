@@ -15,12 +15,7 @@ class MessageTypeEnum(str, Enum):
 
 class AskAtUsers(BaseModel):
     dingtalkId: str
-    staffId: str
-
-
-class ReplyAtUsers(BaseModel):
-    dingtalkId: str
-    staffId: str
+    staffId: Optional[str]
 
 
 class TextMessage(BaseModel):

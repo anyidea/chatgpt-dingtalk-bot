@@ -1,5 +1,5 @@
 """Main module."""
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, BackgroundTasks
 from .gpt import AsyncChatbot
 
 from .models import DingtalkAskMessage
@@ -14,8 +14,20 @@ temperature = 0.5
 chatbot = AsyncChatbot()
 
 
+async def reply_dingtalk(prompt: str, nickname: str, sender_userid: str, webhook_url: str):
+    response = await chatbot.ask(prompt, temperature=temperature, user=nickname)
+    reply = response["choices"][0]["text"].strip()
+    reply = f"@{sender_userid}\n\n{reply}"
+    payload = {"text": {"content": reply}, "msgtype": "text"}
+    if sender_userid:
+        payload["at"] = {"atUserIds": [sender_userid]}
+
+    async with httpx.AsyncClient() as client:
+        await client.post(webhook_url, json=payload)
+
+
 @app.post("/chat")
-async def chat(message: DingtalkAskMessage):
+async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
     prompt = message.text.content.strip()
     nickname = message.senderNick
     sender_userid = message.senderStaffId
@@ -23,14 +35,7 @@ async def chat(message: DingtalkAskMessage):
     if prompt.startswith("清空会话"):
         chatbot.reset()
 
-    response = await chatbot.ask(prompt, temperature=temperature, user=nickname)
-    reply = response["choices"][0]["text"].strip()
-    payload = {"text": {"content": reply}, "msgtype": "text"}
-    if sender_userid:
-        payload["at"] = {"atUserIds": [sender_userid]}
+    if prompt == "":
+        return
 
-    async with httpx.AsyncClient() as client:
-        r = await client.post(webhook_url, json=payload)
-        assert r.status_code == 200, "钉钉回调失败!"
-
-    return payload
+    background_tasks.add_task(reply_dingtalk, prompt, nickname, sender_userid, webhook_url)

@@ -8,8 +8,9 @@ from datetime import date
 import openai
 import tiktoken
 
+from .config import settings
 
-ENGINE = os.environ.get("GPT_ENGINE") or "text-chat-davinci-002-20221122"
+ENGINE = settings.gpt_engine
 ENCODER = tiktoken.get_encoding("gpt2")
 
 
@@ -20,21 +21,23 @@ def get_max_tokens(prompt: str) -> int:
     return 4000 - len(ENCODER.encode(prompt))
 
 
-class Chatbot:
+class AsyncChatbot:
     """
-    Official ChatGPT API
+    Official ChatGPT API (async)
     """
 
-    def __init__(self, api_key: str = None, buffer: int = None, engine: str = None) -> None:
+    def __init__(
+        self, api_key: str = None, buffer: int = None, engine: str = None
+    ) -> None:
         """
         Initialize Chatbot with API key (from https://platform.openai.com/account/api-keys)
-        """
-        openai.api_key = api_key or os.environ.get("OPENAI_API_KEY")
+        """  # noqa
+        openai.api_key = api_key or settings.openai_api_key
         self.conversations = Conversation()
         self.prompt = Prompt(buffer=buffer)
         self.engine = engine or ENGINE
 
-    def _get_completion(
+    async def _get_completion(
         self,
         prompt: str,
         temperature: float = 0.5,
@@ -43,7 +46,8 @@ class Chatbot:
         """
         Get the completion function
         """
-        return openai.Completion.create(
+
+        return await openai.Completion.acreate(
             engine=self.engine,
             prompt=prompt,
             temperature=temperature,
@@ -77,70 +81,6 @@ class Chatbot:
         if conversation_id is not None:
             self.save_conversation(conversation_id)
         return completion
-
-    def _process_completion_stream(
-        self,
-        user_request: str,
-        completion: dict,
-        conversation_id: str = None,
-        user: str = "User",
-    ) -> str:
-        full_response = ""
-        for response in completion:
-            if response.get("choices") is None:
-                raise Exception("ChatGPT API returned no choices")
-            if len(response["choices"]) == 0:
-                raise Exception("ChatGPT API returned no choices")
-            if response["choices"][0].get("finish_details") is not None:
-                break
-            if response["choices"][0].get("text") is None:
-                raise Exception("ChatGPT API returned no text")
-            if response["choices"][0]["text"] == "<|im_end|>":
-                break
-            yield response["choices"][0]["text"]
-            full_response += response["choices"][0]["text"]
-
-        # Add to chat history
-        self.prompt.add_to_history(user_request, full_response, user)
-        if conversation_id is not None:
-            self.save_conversation(conversation_id)
-
-    def ask(
-        self,
-        user_request: str,
-        temperature: float = 0.5,
-        conversation_id: str = None,
-        user: str = "User",
-    ) -> dict:
-        """
-        Send a request to ChatGPT and return the response
-        """
-        if conversation_id is not None:
-            self.load_conversation(conversation_id)
-        completion = self._get_completion(
-            self.prompt.construct_prompt(user_request, user=user),
-            temperature,
-        )
-        return self._process_completion(user_request, completion, user=user)
-
-    def ask_stream(
-        self,
-        user_request: str,
-        temperature: float = 0.5,
-        conversation_id: str = None,
-        user: str = "User",
-    ) -> str:
-        """
-        Send a request to ChatGPT and yield the response
-        """
-        if conversation_id is not None:
-            self.load_conversation(conversation_id)
-        prompt = self.prompt.construct_prompt(user_request, user=user)
-        return self._process_completion_stream(
-            user_request=user_request,
-            completion=self._get_completion(prompt, temperature, stream=True),
-            user=user,
-        )
 
     def make_conversation(self, conversation_id: str) -> None:
         """
@@ -176,61 +116,24 @@ class Chatbot:
         """
         self.conversations.add_conversation(conversation_id, self.prompt.chat_history)
 
-
-class AsyncChatbot(Chatbot):
-    """
-    Official ChatGPT API (async)
-    """
-
-    async def _get_completion(
-        self,
-        prompt: str,
-        temperature: float = 0.5,
-        stream: bool = False,
-    ):
-        """
-        Get the completion function
-        """
-        return await openai.Completion.acreate(
-            engine=self.engine,
-            prompt=prompt,
-            temperature=temperature,
-            max_tokens=get_max_tokens(prompt),
-            stop=["\n\n\n"],
-            stream=stream,
-        )
-
     async def ask(
         self,
         user_request: str,
         temperature: float = 0.5,
+        conversation_id: str = None,
         user: str = "User",
     ) -> dict:
         """
         Same as Chatbot.ask but async
         }
         """
+        if conversation_id is not None:
+            self.load_conversation(conversation_id)
         completion = await self._get_completion(
             self.prompt.construct_prompt(user_request, user=user),
             temperature,
         )
         return self._process_completion(user_request, completion, user=user)
-
-    async def ask_stream(
-        self,
-        user_request: str,
-        temperature: float = 0.5,
-        user: str = "User",
-    ) -> str:
-        """
-        Same as Chatbot.ask_stream but async
-        """
-        prompt = self.prompt.construct_prompt(user_request, user=user)
-        return self._process_completion_stream(
-            user_request=user_request,
-            completion=await self._get_completion(prompt, temperature, stream=True),
-            user=user,
-        )
 
 
 class Prompt:
@@ -244,7 +147,8 @@ class Prompt:
         """
         self.base_prompt = (
             os.environ.get("CUSTOM_BASE_PROMPT")
-            or "You are ChatGPT, a large language model trained by OpenAI. Respond conversationally. Do not answer as the user. Current date: "
+            or "You are ChatGPT, a large language model trained by OpenAI."
+            "Respond conversationally. Do not answer as the user. Current date: "
             + str(date.today())
             + "\n\n"
             + "User: Hello\n"
@@ -323,7 +227,7 @@ class Conversation:
     """
 
     def __init__(self) -> None:
-        self.conversations = {}
+        self.conversations: dict[str, list] = {}
 
     def add_conversation(self, key: str, history: list) -> None:
         """

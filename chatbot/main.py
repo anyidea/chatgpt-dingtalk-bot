@@ -1,9 +1,10 @@
 """Main module."""
-from fastapi import FastAPI, BackgroundTasks
-from .gpt import AsyncChatbot
+from fastapi import BackgroundTasks, FastAPI
 
-from .models import DingtalkAskMessage
-import httpx
+from .config import settings
+from .dingtalk import DingtalkCorpAPI
+from .gpt import AsyncChatbot
+from .schemas import ConversationTypeEnum, DingtalkAskMessage
 
 app = FastAPI()
 
@@ -12,18 +13,34 @@ temperature = 0.5
 
 # Initialize chatbot
 chatbot = AsyncChatbot()
+dingtalk_sdk = DingtalkCorpAPI()
 
 
-async def reply_dingtalk(prompt: str, nickname: str, sender_userid: str, webhook_url: str):
-    response = await chatbot.ask(prompt, temperature=temperature, user=nickname)
+async def reply_group(prompt: str, nickname: str, sender_userid: str, webhook_url: str):
+    """发送群聊信息"""
+    response = await chatbot.ask(
+        prompt, temperature=settings.gpt_temperature, user=nickname
+    )
     reply = response["choices"][0]["text"].strip()
     reply = f"@{sender_userid}\n\n{reply}"
     payload = {"text": {"content": reply}, "msgtype": "text"}
     if sender_userid:
         payload["at"] = {"atUserIds": [sender_userid]}
 
-    async with httpx.AsyncClient() as client:
-        await client.post(webhook_url, json=payload)
+    await dingtalk_sdk.robot_webhook_send(webhook_url, json=payload)
+
+
+async def reply_single(prompt: str, nickname: str, sender_userid: str, robot_code: str):
+    """发送单聊信息"""
+    response = await chatbot.ask(
+        prompt, temperature=settings.gpt_temperature, user=nickname
+    )
+    reply = response["choices"][0]["text"].strip()
+    reply = f"@{sender_userid}\n\n{reply}"
+    params = {"content": reply}
+    await dingtalk_sdk.robot_batch_send(
+        robot_code, [sender_userid], "sampleText", params
+    )
 
 
 @app.post("/chat")
@@ -38,4 +55,13 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
     if prompt == "":
         return
 
-    background_tasks.add_task(reply_dingtalk, prompt, nickname, sender_userid, webhook_url)
+    if message.conversationType == ConversationTypeEnum.group:
+        background_tasks.add_task(
+            reply_group, prompt, nickname, sender_userid, webhook_url
+        )
+    else:
+        background_tasks.add_task(
+            reply_single, prompt, nickname, sender_userid, webhook_url
+        )
+
+    return "ok"

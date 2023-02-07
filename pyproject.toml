@@ -28,6 +28,7 @@ fastapi = "^0.89.1"
 revchatgpt = "^1.1.5"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
 httpx = {extras = ["socks"], version = "^0.23.3"}
+python-dotenv = "^0.21.1"
 
 [tool.poetry.group.dev.dependencies]
 tox = "^3.27.0"

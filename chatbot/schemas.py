@@ -1,6 +1,7 @@
-from pydantic import BaseModel, HttpUrl
-from typing import Optional
 from enum import Enum
+from typing import Optional
+
+from pydantic import BaseModel, HttpUrl
 
 
 class ConversationTypeEnum(str, Enum):

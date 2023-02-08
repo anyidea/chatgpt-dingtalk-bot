@@ -11,7 +11,7 @@ import tiktoken
 from .config import settings
 
 ENGINE = settings.gpt_engine
-ENCODER = tiktoken.get_encoding("gpt2")
+ENCODER = tiktoken.get_encoding(settings.gpt_encoding)
 
 
 def get_max_tokens(prompt: str) -> int:

@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     openai_api_key: str
     gpt_temperature: float
     gpt_engine: str
+    gpt_encoding: str
     dingtalk_app_key: str = ""
     dingtalk_app_secret: str = ""
 

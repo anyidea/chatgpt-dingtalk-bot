@@ -32,7 +32,7 @@ async def reply(
     if conversation_type == ConversationTypeEnum.group:
         response = f"@{sender_userid}\n\n{response}"
 
-    payload = {"text": {"content": response}, "msgtype": "text"}
+    payload = {"markdown": {"title": "AI回复了你", "text": response}, "msgtype": "markdown"}
     if sender_userid:
         payload["at"] = {"atUserIds": [sender_userid]}
 

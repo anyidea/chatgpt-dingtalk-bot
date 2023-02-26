@@ -1,0 +1,1 @@
+BUSSY_MESSAGE = "Only one message at a time"

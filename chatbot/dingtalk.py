@@ -11,8 +11,8 @@ class DingtalkCorpAPI:
     """
 
     def __init__(self, app_key: str = None, app_secret: str = None):
-        self._app_key = app_key or settings.dingtalk_app_key
-        self._app_secret = app_secret or settings.dingtalk_app_secret
+        self._app_key = app_key or settings.app_key
+        self._app_secret = app_secret or settings.app_secret
         self._access_token = ""
         self.expires_at = 0
 

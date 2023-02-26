@@ -37,13 +37,13 @@ async def reply(
             response = str(e)
 
     title = response[:12]
-    payload: Dict[str, Any] = {"msgtype": "markdown"}
+    payload: Dict[str, Any] = {"msgtype": "actionCard"}
     # 群聊时加上@
     if conversation_type == ConversationTypeEnum.group and sender_userid:
         response = f"@{sender_userid}\n\n{response}"
         payload["at"] = {"atUserIds": [sender_userid]}
 
-    payload["markdown"] = {"title": f" {title}", "text": response}
+    payload["actionCard"] = {"title": f" {title}", "text": response}
     await dingtalk_sdk.robot_webhook_send(webhook_url, json=payload)
 
 

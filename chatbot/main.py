@@ -28,7 +28,7 @@ async def reply(
     """发送群聊信息"""
     response = ""
     try:
-        async for data in chatbot.ask(prompt, conversation_id=conversation_id):
+        async for data in chatbot.ask(prompt):
             response = data["message"].strip()
     except Exception as e:
         if BUSSY_MESSAGE in str(e):

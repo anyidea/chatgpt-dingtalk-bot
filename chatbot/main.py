@@ -23,7 +23,7 @@ async def reply(
 ):
     """发送群聊信息"""
     response = ""
-    async for data in await chatbot.ask(
+    async for data in chatbot.ask(
         prompt
     ):
         response = data["message"].strip()

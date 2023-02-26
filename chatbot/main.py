@@ -36,7 +36,7 @@ async def reply(
         else:
             response = str(e)
 
-    title = response[10:]
+    title = response[:12]
     payload: Dict[str, Any] = {"msgtype": "markdown"}
     # 群聊时加上@
     if conversation_type == ConversationTypeEnum.group and sender_userid:

@@ -1,7 +1,7 @@
 """Main module."""
 from fastapi import BackgroundTasks, FastAPI
 from revChatGPT.V1 import AsyncChatbot
-from .config import settings
+from .config import gpt_settings
 from .dingtalk import DingtalkCorpAPI
 
 from .schemas import ConversationTypeEnum, DingtalkAskMessage
@@ -10,7 +10,7 @@ from .schemas import ConversationTypeEnum, DingtalkAskMessage
 app = FastAPI()
 
 # Initialize chatbot
-chatbot = AsyncChatbot(config=settings.dict())
+chatbot = AsyncChatbot(config=gpt_settings.dict(exclude_unset=True))
 dingtalk_sdk = DingtalkCorpAPI()
 
 

@@ -2,7 +2,7 @@ from pydantic import BaseSettings
 from typing import Optional
 
 
-class Settings(BaseSettings):
+class ChatGPTSettings(BaseSettings):
     email: Optional[str]
     password: Optional[str]
     access_token: Optional[str]
@@ -10,11 +10,21 @@ class Settings(BaseSettings):
     parent_id: Optional[str]
     proxy: Optional[str]
     paid: bool = False
-    dingtalk_app_key: str = ""
-    dingtalk_app_secret: str = ""
 
     class Config:
         env_file = ".env"
+        partial = True
+        env_prefix = 'GPT_'
 
 
-settings = Settings()
+class DingtalkSettings(BaseSettings):
+    app_key: str
+    app_secret: str
+
+    class Config:
+        env_file = ".env"
+        env_prefix = 'DINGTALK_'
+
+
+gpt_settings = ChatGPTSettings()
+dingtalk_settings = DingtalkSettings()

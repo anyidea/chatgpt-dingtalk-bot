@@ -2,7 +2,7 @@ import time
 
 import httpx
 
-from .config import settings
+from .config import dingtalk_settings as settings
 
 
 class DingtalkCorpAPI:

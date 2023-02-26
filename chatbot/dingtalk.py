@@ -75,3 +75,8 @@ class DingtalkCorpAPI:
         async with httpx.AsyncClient() as client:
             resp = await client.post(webhook_url, json=json)
             assert resp.status_code == 200, "发送群聊消息失败"
+
+
+class DingtalkConversation:
+    def __init__(self, user_id: str = "user"):
+        self.user = user_id

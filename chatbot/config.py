@@ -1,11 +1,15 @@
 from pydantic import BaseSettings
+from typing import Optional
 
 
 class Settings(BaseSettings):
-    openai_api_key: str
-    gpt_temperature: float
-    gpt_engine: str
-    gpt_encoding: str
+    email: Optional[str]
+    password: Optional[str]
+    access_token: Optional[str]
+    conversation_id: Optional[str]
+    parent_id: Optional[str]
+    proxy: Optional[str]
+    paid: bool = False
     dingtalk_app_key: str = ""
     dingtalk_app_secret: str = ""
 

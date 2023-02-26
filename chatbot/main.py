@@ -1,19 +1,20 @@
 """Main module."""
 from fastapi import BackgroundTasks, FastAPI
-
+from revChatGPT.V1 import AsyncChatbot
 from .config import settings
 from .dingtalk import DingtalkCorpAPI
-from .gpt import AsyncChatbot
+
 from .schemas import ConversationTypeEnum, DingtalkAskMessage
+
 
 app = FastAPI()
 
 # Initialize chatbot
-chatbot = AsyncChatbot()
+chatbot = AsyncChatbot(config=settings.dict())
 dingtalk_sdk = DingtalkCorpAPI()
 
 
-async def reply_chatbot(
+async def reply(
     prompt: str,
     nickname: str,
     sender_userid: str,
@@ -21,15 +22,17 @@ async def reply_chatbot(
     conversation_type: str,
 ):
     """发送群聊信息"""
-    response = await chatbot.ask(
-        prompt, temperature=settings.gpt_temperature, user=nickname
-    )
-    reply = response["choices"][0]["text"].strip()
+    response = ""
+    async for data in await chatbot.ask(
+        prompt
+    ):
+        response = data["message"].strip()
+
     # 群聊时加上@
     if conversation_type == ConversationTypeEnum.group:
-        reply = f"@{sender_userid}\n\n{reply}"
+        response = f"@{sender_userid}\n\n{response}"
 
-    payload = {"text": {"content": reply}, "msgtype": "text"}
+    payload = {"text": {"content": response}, "msgtype": "text"}
     if sender_userid:
         payload["at"] = {"atUserIds": [sender_userid]}
 
@@ -49,7 +52,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         return
 
     background_tasks.add_task(
-        reply_chatbot,
+        reply,
         prompt,
         nickname,
         sender_userid,

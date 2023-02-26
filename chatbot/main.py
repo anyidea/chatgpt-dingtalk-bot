@@ -28,14 +28,13 @@ async def reply(
     ):
         response = data["message"].strip()
 
+    payload = {"msgtype": "markdown"}
     # 群聊时加上@
-    if conversation_type == ConversationTypeEnum.group:
+    if conversation_type == ConversationTypeEnum.group and sender_userid:
         response = f"@{sender_userid}\n\n{response}"
-
-    payload = {"markdown": {"title": "AI回复了你", "text": response}, "msgtype": "markdown"}
-    if sender_userid:
         payload["at"] = {"atUserIds": [sender_userid]}
 
+    payload["markdown"] =  {"title": "AI回复了你", "text": response}
     await dingtalk_sdk.robot_webhook_send(webhook_url, json=payload)
 
 

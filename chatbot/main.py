@@ -41,9 +41,9 @@ async def reply(
     # 群聊时加上@
     if conversation_type == ConversationTypeEnum.group and sender_userid:
         response = f"@{sender_userid}\n\n{response}"
-        payload["at"] = {"atUserIds": [sender_userid]}  # noqa
+        payload["at"] = {"atUserIds": [sender_userid]}
 
-    payload["markdown"] = {"title": f" {title}", "text": response}  # noqa
+    payload["markdown"] = {"title": f" {title}", "text": response}
     await dingtalk_sdk.robot_webhook_send(webhook_url, json=payload)
 
 

@@ -30,6 +30,8 @@ A dingtalk chatbot powered by chatGPT.
 docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
 ```
 
+3. 在钉钉管理后台添加企业内部app, 并添加机器人，配置url(http://<ip>:8090/chat)和ip白名单，然后点击上线机器人即可。
+
 ## Credits
 
 This package was created with [Cookiecutter](https://github.com/cookiecutter/cookiecutter) and the [wccdev/cookiecutter-pypackage](https://github.com/wccdev/cookiecutter-pypackage) project template.

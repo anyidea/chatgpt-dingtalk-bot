@@ -5,5 +5,4 @@ set -o pipefail
 set -o nounset
 
 
-# python /app/manage.py collectstatic --noinput
-exec uvicorn config.asgi:application --host 0.0.0.0 --port 8000 --proxy-headers --app-dir /app
+exec uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers --app-dir /app

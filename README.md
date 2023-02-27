@@ -23,7 +23,7 @@ A dingtalk chatbot powered by chatGPT.
 * 将chatGPT集成到钉钉机器人
 
 ## Quick start
-1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token `
+1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
 
 2. 拉取镜像并运行
 ```commandline

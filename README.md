@@ -20,7 +20,15 @@ A dingtalk chatbot powered by chatGPT.
 
 ## Features
 
-* TODO
+* 将chatGPT集成到钉钉机器人
+
+## Quick start
+1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token `
+
+2. 拉取镜像并运行
+```commandline
+docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
+```
 
 ## Credits
 

@@ -29,14 +29,16 @@ async def reply(
     """发送群聊信息"""
     response = ""
     try:
-        async with pool.get_object() as chatbot:
-            async for data in chatbot.ask(prompt):
-                response = data["message"].strip()
+        chatbot = await pool.get_object()
+        async for data in chatbot.ask(prompt):
+            response = data["message"].strip()
     except Exception as e:
         if BUSSY_MESSAGE in str(e):
             response = "在发送另一条消息之前，请等待任何其他响应完成，或者等待一分钟。"
         else:
             response = str(e)
+    finally:
+        await pool.release_object(chatbot)
 
     title = response[:12]
     payload: Dict[str, Any] = {"msgtype": "text"}

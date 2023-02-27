@@ -10,7 +10,7 @@
 
 
 
-A dingtalk chatbot powered by chatGPT.
+将Web版ChatGPT集成到钉钉机器人,支持单聊和群聊@.
 
 
 * Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
@@ -21,7 +21,7 @@ A dingtalk chatbot powered by chatGPT.
 ## Features
 
 * 浏览器版本ChatGPT, 完整版本，非api版本
-* 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
+* 支持群聊和单聊模式
 * 支持Docker一键部署
 * 支持配置多个账号，通过连接池来避免单账号的限制
 

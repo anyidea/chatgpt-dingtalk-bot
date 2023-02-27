@@ -26,14 +26,16 @@ class DingtalkCorpAPI:
         :param app_secret: 应用的密钥。AppKey和AppSecret可在钉钉开发者后台的应用详情页面获取。
         :return: 企业微应用访问凭证,凭证到期时间(单位:秒)
         """
+        url = "https://oapi.dingtalk.com/gettoken"
         if time.time() > self.expires_at:
-            url = "https://oapi.dingtalk.com/gettoken"
-            params = {
-                "appkey": app_key or self._app_key,
-                "appsecret": app_secret or self._app_secret,
-            }
             async with httpx.AsyncClient() as client:
-                resp = await client.get(url, params=params)
+                resp = await client.get(
+                    url,
+                    params={
+                        "appkey": app_key or self._app_key,
+                        "appsecret": app_secret or self._app_secret,
+                    },
+                )
                 assert resp.status_code == 200, "获取access_token失败"
                 ret = resp.json()
                 self._access_token, self.expires_at = (
@@ -50,7 +52,7 @@ class DingtalkCorpAPI:
         msg_key: str = "sampleText",
         msg_param: dict = None,
     ) -> None:
-        """钉钉机器人群发单聊消息"""
+        """钉钉机器人群发单聊消息(需要获取对应权限)"""
         url = "https://api.dingtalk.com/v1.0/robot/oToMessages/batchSend"
         access_token = await self.get_access_token()
         headers = {

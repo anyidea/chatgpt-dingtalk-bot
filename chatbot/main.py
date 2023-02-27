@@ -38,7 +38,7 @@ async def reply(
         else:
             response = str(e)
     finally:
-        await pool.release_object(chatbot)
+        pool.release_object(chatbot)
 
     title = response[:12]
     payload: Dict[str, Any] = {"msgtype": "text"}

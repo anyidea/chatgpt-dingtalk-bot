@@ -22,7 +22,7 @@ A dingtalk chatbot powered by chatGPT.
 
 * 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
 * 支持Docker一键部署
-* 支持多配置账号，通过连接池来避免单账号限制
+* 支持配置多个账号，通过连接池来避免单账号的限制
 
 ## Quick start
 1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token

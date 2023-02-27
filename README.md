@@ -20,7 +20,7 @@ A dingtalk chatbot powered by chatGPT.
 ## Features
 
 * 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
-* 支持Docker部署
+* 支持Docker一键部署
 * 支持多配置账号，通过连接池来避免单账号限制
 
 ## Quick start

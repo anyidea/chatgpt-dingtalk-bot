@@ -1,15 +1,16 @@
-# chatgpt-dingtalk-bot
+# Chatgpt Dingtalk Bot
 
 
 [![License](https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot)](https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE)
-[![Python](https://img.shields.io/pypi/pyversions/chatgpt-dingtalk-bot.svg)](https://pypi.org/project/chatgpt-dingtalk-bot/)
+[![Python Version](https://img.shields.io/badge/python->=3.8-blue)](https://www.python.org/)
 [![Build Status](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml)
+[![Built with Cookiecutter](https://img.shields.io/badge/built%20with-Cookiecutter-ff69b4.svg?logo=cookiecutter)](https://github.com/wccdev/cookiecutter-pypackage/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 
 
-A dingtalk chatbot powered by chatGPT.
+将Web版ChatGPT集成到钉钉机器人,支持单聊和群聊@
 
 
 * Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
@@ -19,9 +20,10 @@ A dingtalk chatbot powered by chatGPT.
 
 ## Features
 
-* 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
+* 浏览器版本ChatGPT, 完整版本，非api版本
+* 支持群聊和单聊模式
 * 支持Docker一键部署
-* 支持多配置账号，通过连接池来避免单账号限制
+* 支持配置多个账号，通过连接池来避免单账号的限制
 
 
 ## Quick start

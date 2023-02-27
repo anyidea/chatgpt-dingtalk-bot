@@ -7,7 +7,6 @@
 **/.vscode
 **/.fleet
 **/coverage
-**/.env
 **/.aws
 **/.ssh
 Dockerfile
@@ -16,6 +15,7 @@ docker-compose.yml
 .pre-commit-config.yaml
 **/.DS_Store
 **/venv
+**/.venv
 **/env
 **/.env
 **/.envs

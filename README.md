@@ -35,9 +35,9 @@ docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chat
 ```
 
 3. 在钉钉管理后台添加企业内部app, 并添加机器人(需要配置机器人权限)，然后配置url(http://your-ip-address:8090/chat)和ip白名单，最后点击上线机器人即可。
-[](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005625.jpg)
-[](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005746.jpg)
-[](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005824.jpg)
+![1](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005625.jpg)
+![2](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005746.jpg)
+![3](https://raw.githubusercontent.com/wccdev/filez-python-sdk/master/.github/assets/20230228005824.jpg)
 
 ## Credits
 

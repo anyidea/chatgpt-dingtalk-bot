@@ -20,6 +20,7 @@ A dingtalk chatbot powered by chatGPT.
 
 ## Features
 
+* 浏览器版本ChatGPT, 完整版本，非api版本
 * 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
 * 支持Docker一键部署
 * 支持配置多个账号，通过连接池来避免单账号的限制

@@ -14,23 +14,24 @@ A dingtalk chatbot powered by chatGPT.
 
 * Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
 * GitHub: <https://github.com/anyidea/chatgpt-dingtalk-bot>
-* PyPI: <https://pypi.org/project/chatgpt-dingtalk-bot/>
 * Free software: MIT
 
 
 ## Features
 
-* 将chatGPT集成到钉钉机器人
+* 将ChatGPT集成到钉钉机器人，支持群聊和单聊模式
+* 支持Docker一键部署
+* 支持多配置账号，通过连接池来避免单账号限制
 
 ## Quick start
-1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token `
+1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
 
 2. 拉取镜像并运行
 ```commandline
 docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
 ```
 
-3. 在钉钉管理后台添加企业内部app, 并添加机器人，配置url(http://<ip>:8090/chat)和ip白名单，然后点击上线机器人即可。
+3. 在钉钉管理后台添加企业内部app, 并添加机器人(需要配置机器人权限)，然后配置url(http://your-ip-address:8090/chat)和ip白名单，最后点击上线机器人即可。
 
 ## Credits
 

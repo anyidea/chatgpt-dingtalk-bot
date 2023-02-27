@@ -14,7 +14,6 @@ A dingtalk chatbot powered by chatGPT.
 
 * Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
 * GitHub: <https://github.com/anyidea/chatgpt-dingtalk-bot>
-* PyPI: <https://pypi.org/project/chatgpt-dingtalk-bot/>
 * Free software: MIT
 
 

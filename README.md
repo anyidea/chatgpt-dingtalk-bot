@@ -42,6 +42,8 @@ docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chat
 
 ![3](https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005824.jpg)
 
+![3](https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg)
+
 
 
 ## Credits

@@ -30,7 +30,7 @@ def init_chatbots():
             email, password = account.split(":")
         except Exception:
             raise ValueError("邮箱密码格式错误，正确格式为: <邮箱1>:<密码1>,<邮箱2>:<密码2>...")
-        print(dict(email=email, password=password, **config))
+
         c = dict(email=email, password=password, **config)
         bots.append(AsyncChatbot(config=c))
 

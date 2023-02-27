@@ -2,7 +2,7 @@
 
 
 [![License](https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot)](https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE)
-[![Python](https://img.shields.io/pypi/pyversions/chatgpt-dingtalk-bot.svg)](https://pypi.org/project/chatgpt-dingtalk-bot/)
+[![Python Version](https://img.shields.io/badge/python-3.9-blue)](https://www.python.org/)
 [![Build Status](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 

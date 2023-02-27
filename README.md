@@ -10,7 +10,7 @@
 
 
 
-将Web版ChatGPT集成到钉钉机器人,支持单聊和群聊@.
+将Web版ChatGPT集成到钉钉机器人,支持单聊和群聊@
 
 
 * Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>

@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bullseye as python
+FROM --platform=$TARGETPLATFORM python:3.11-slim-bullseye as python
 
 # Python build stage
 FROM python as builder

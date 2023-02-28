@@ -12,6 +12,7 @@ def response():
 
     See more at: http://doc.pytest.org/en/latest/fixture.html
     """
+    pass
     # import requests
     # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
 

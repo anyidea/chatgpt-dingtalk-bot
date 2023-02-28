@@ -113,3 +113,6 @@ ENV/
 
 # mkdocs build dir
 site/
+
+# database
+sqlite.db

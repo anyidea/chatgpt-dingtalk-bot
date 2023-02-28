@@ -12,6 +12,7 @@
 Dockerfile
 README.md
 docker-compose.yml
+sqlite.db
 .pre-commit-config.yaml
 **/.DS_Store
 **/venv

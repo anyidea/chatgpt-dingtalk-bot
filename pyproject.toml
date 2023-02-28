@@ -29,6 +29,7 @@ revchatgpt = "^2.3.15"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
 httpx = {extras = ["socks"], version = "^0.23.3"}
 python-dotenv = "^0.21.1"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.4"}
 
 [tool.poetry.group.dev.dependencies]
 tox = "^3.27.0"

@@ -1,13 +1,15 @@
 """Main module."""
 from typing import Any, Dict
-
+from sqlalchemy.orm import Session
 from fastapi import BackgroundTasks, FastAPI
 
 from .chatgpt import AsyncChatbotPool
 from .constants import BUSSY_MESSAGE
 from .dingtalk import DingtalkCorpAPI
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from .schemas import ConversationTypeEnum, DingtalkAskMessage
-from .utils import get_conversation_id, init_chatbots
+from .utils import get_conversation_id, init_chatbots, get_or_create
 
 app = FastAPI()
 
@@ -61,13 +63,17 @@ async def ask_and_reply(
 
 
 @app.post("/chat")
-async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
+async def chat(db: AsyncSession = Depends(get_db), message: DingtalkAskMessage, background_tasks: BackgroundTasks):
     prompt = message.text.content.strip()
     nickname = message.senderNick
     conversation_id = get_conversation_id(message.conversationId)
     conversation_type = message.conversationType
     sender_userid = message.senderStaffId
     webhook_url = message.sessionWebhook
+
+    # 创建/获取会话
+    conv = get_or_create(,Conversation,)
+
     if prompt == "":
         return
 

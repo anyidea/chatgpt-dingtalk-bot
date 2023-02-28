@@ -34,7 +34,7 @@
 docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
 ```
 
-3. 在钉钉管理后台添加企业内部app, 并添加机器人(需要配置机器人权限)，然后配置url和ip白名单，最后点击上线机器人即可。
+3. 在钉钉管理后台添加企业内部机器人，然后配置url和ip白名单，最后需要手动点击上线机器人。
 <div align=center>
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" ali width="80%" height="80%">
 

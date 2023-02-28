@@ -2,7 +2,7 @@
 from typing import Any, Dict
 
 from fastapi import BackgroundTasks, FastAPI
-from sqlalchemy import insert, select, update
+from sqlalchemy import delete, insert, select, update
 
 from .chatgpt import AsyncChatbotPool
 from .constants import BUSSY_MESSAGE, WELCOME_MESSAGE
@@ -52,6 +52,7 @@ async def ask_and_reply(
     webhook_url: str,
     conversation_type: str,
     conversation_id: str,
+    conversation_title: str,
 ):
     """获取gpt回答"""
     response = ""
@@ -59,19 +60,21 @@ async def ask_and_reply(
     try:
         chatbot = await pool.get_object()
         chatbot_id = chatbot.config["email"]
-        q = select(
+        select_stmt = select(
             conversation.c.id,
             conversation.c.gpt_conversation,
             conversation.c.parent_conversation,
         ).where(conversation.c.chatbot_id == chatbot_id)
         if conversation_type == ConversationTypeEnum.group:
-            q = q.where(conversation.c.dingtalk_conversation == conversation_id)
+            select_stmt = select_stmt.where(
+                conversation.c.dingtalk_conversation == conversation_id
+            )
         else:
-            q = q.where(conversation.c.user_id == sender_userid)
+            select_stmt = select_stmt.where(conversation.c.user_id == sender_userid)
 
         kwargs = {}
         is_new_conv = False
-        row = await database.fetch_one(q)
+        row = await database.fetch_one(select_stmt)
         pk = None
         if row:
             kwargs["conversation_id"] = row["gpt_conversation"]
@@ -86,28 +89,31 @@ async def ask_and_reply(
             parent_id = data["parent_id"]
 
         if is_new_conv:
+            # 设置标题
             if conversation_type == ConversationTypeEnum.single:
-                q = insert(conversation).values(
+                await chatbot.change_title(gpt_conv_id, nickname)
+                stmt = insert(conversation).values(
                     chatbot_id=chatbot_id,
                     gpt_conversation=gpt_conv_id,
                     parent_conversation=parent_id,
                     user_id=sender_userid,
                 )
             else:
-                q = insert(conversation).values(
+                await chatbot.change_title(gpt_conv_id, conversation_title)
+                stmt = insert(conversation).values(
                     chatbot_id=chatbot_id,
                     gpt_conversation=gpt_conv_id,
                     parent_conversation=parent_id,
                     dingtalk_conversation=conversation_id,
                 )
         else:
-            q = (
+            stmt = (
                 update(conversation)
                 .where(conversation.c.id == pk)
                 .values(parent_conversation=parent_id)
             )
 
-        await database.execute(q)
+        await database.execute(stmt)
     except Exception as e:
         if BUSSY_MESSAGE in str(e):
             response = "在发送另一条消息之前，请等待任何其他响应完成，或者等待一分钟。"
@@ -128,6 +134,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
     conversation_type = message.conversationType
     sender_userid = message.senderStaffId
     webhook_url = message.sessionWebhook
+    conversation_title = message.conversationTitle
 
     if prompt.lower() in ("", "帮助", "help"):
         await callback_bot(
@@ -136,12 +143,39 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         return
     elif prompt.startswith("清空"):
         for chatbot in chatbots:
+            chatbot_id = chatbot.config["email"]
             await chatbot.delete_conversation(conversation_id)
+            if conversation_type == ConversationTypeEnum.group:
+                await database.execute(
+                    delete(conversation)
+                    .where(conversation.c.dingtalk_conversation == conversation_id)
+                    .where(conversation.c.chatbot_id == chatbot_id)
+                )
+            else:
+                await database.execute(
+                    delete(conversation)
+                    .where(conversation.c.user_id == sender_userid)
+                    .where(conversation.c.chatbot_id == chatbot_id)
+                )
         await callback_bot(webhook_url, "会话已删除", conversation_type, sender_userid)
         return
     elif prompt.startswith("重置"):
         for chatbot in chatbots:
-            chatbot.reset_chat()
+            chatbot_id = chatbot.config["email"]
+            if conversation_type == ConversationTypeEnum.group:
+                await database.execute(
+                    update(conversation)
+                    .where(conversation.c.dingtalk_conversation == conversation_id)
+                    .where(conversation.c.chatbot_id == chatbot_id)
+                    .values(parent_conversation=None)
+                )
+            else:
+                await database.execute(
+                    update(conversation)
+                    .where(conversation.c.user_id == sender_userid)
+                    .where(conversation.c.chatbot_id == chatbot_id)
+                    .values(parent_conversation=None)
+                )
         await callback_bot(webhook_url, "会话已重置", conversation_type, sender_userid)
         return
 
@@ -153,5 +187,6 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         webhook_url,
         message.conversationType,
         conversation_id,
+        conversation_title,
     )
     return

@@ -1,15 +1,15 @@
 """Main module."""
 from typing import Any, Dict
-from sqlalchemy.orm import Session
+
 from fastapi import BackgroundTasks, FastAPI
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import Session
 
 from .chatgpt import AsyncChatbotPool
 from .constants import BUSSY_MESSAGE
 from .dingtalk import DingtalkCorpAPI
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from .schemas import ConversationTypeEnum, DingtalkAskMessage
-from .utils import get_conversation_id, init_chatbots, get_or_create
+from .utils import get_conversation_id, get_or_create, init_chatbots
 
 app = FastAPI()
 

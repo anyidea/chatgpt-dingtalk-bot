@@ -63,7 +63,7 @@ docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 
 -e GPT_PAID=false \
 aidenlu/chatgpt-dingtalk-bot
 ```
-> 💡 ChatGPT Plus用户可设置`GPT_PAID=true`
+> 💡 **ChatGPT Plus**用户可设置`GPT_PAID=true`
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)

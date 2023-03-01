@@ -25,7 +25,7 @@
 
 ## Features
 
-* 浏览器版本ChatGPT(非api版本)
+* 浏览器版本ChatGPT(非API版本)
 * 使用Fastapi框架，支持异步
 * 支持机器人群聊和单聊模式(暂只支持账号登录模式)
 * 支持Docker一键部署

@@ -31,10 +31,6 @@
 * 支持上下文聊天
 * 支持Docker一键部署
 * 支持配置多个账号，通过连接池来避免单账号的限制
-> **Note**
->
-> 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
-
 
 ## Quick start
 
@@ -73,7 +69,10 @@ docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 
 -e GPT_PAID=false \
 aidenlu/chatgpt-dingtalk-bot
 ```
-> 💡 **ChatGPT Plus**用户可设置`GPT_PAID=true`
+> **Note**
+>
+> **ChatGPT Plus**用户可设置`GPT_PAID=true
+> 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)

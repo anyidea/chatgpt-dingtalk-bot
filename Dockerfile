@@ -1,7 +1,8 @@
-ARG APP_HOME=/app
+ARG PYTHON_VERSION=3.11-slim-bullseye
 ARG POETRY_VERSION=1.4.0
+ARG APP_HOME=/app
 
-FROM --platform=$TARGETPLATFORM python:3.11-slim-bullseye as python
+FROM --platform=$TARGETPLATFORM python:${PYTHON_VERSION} as python
 
 # Python build stage
 FROM python as builder

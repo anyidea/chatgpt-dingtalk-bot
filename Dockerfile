@@ -8,11 +8,9 @@ ARG POETRY_VERSION=1.3.2
 WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
-ENV PIP_INDEX_URL=https://mirrors.aliyun.com/pypi/simple/
 
 # Install apt packages
-RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list \
-  && apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential
 
@@ -40,8 +38,7 @@ RUN addgroup --system fastapi \
     && adduser --system --ingroup fastapi fastapi
 
 # Install required system dependencies
-RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" /etc/apt/sources.list \
-  && apt-get update \
+RUN apt-get update \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*

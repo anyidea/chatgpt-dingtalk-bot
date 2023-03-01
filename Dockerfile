@@ -4,7 +4,7 @@ FROM --platform=$TARGETPLATFORM python:3.11-slim-bullseye as python
 FROM python as builder
 
 ARG APP_HOME=/app
-ARG POETRY_VERSION=1.3.2
+ARG POETRY_VERSION=1.4.0
 WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true

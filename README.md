@@ -63,7 +63,7 @@ aidenlu/chatgpt-dingtalk-bot
 
 
 3. 在钉钉管理后台添加企业内部机器人，然后配置消息接收地址和出口IP白名单，最后需要手动点击上线机器人。
-> ⚠️机器人不要命名为chatgpt之类的，会被钉钉屏蔽
+> ⚠️ 机器人不要命名为chatgpt之类的，会被钉钉屏蔽
 <div align=center>
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" ali width="80%" height="80%">
 

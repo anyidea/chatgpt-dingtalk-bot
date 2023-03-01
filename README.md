@@ -31,7 +31,6 @@
 ### Docker 运行
 
 ```bash
-- 通过`.env`文件来指定环境变量
 docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped -p 8090:8090 \
 --env-file .env \
 aidenlu/chatgpt-dingtalk-bot

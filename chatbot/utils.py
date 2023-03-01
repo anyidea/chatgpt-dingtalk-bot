@@ -1,5 +1,5 @@
 import uuid
-
+import time
 from revChatGPT.V1 import AsyncChatbot
 
 from .config import gpt_settings
@@ -33,6 +33,7 @@ def init_chatbots():
 
         c = dict(email=email, password=password, **config)
         bots.append(AsyncChatbot(config=c))
+        time.sleep(2)
 
     for access_token in access_tokens:
         c = dict(access_token=access_token, **config)

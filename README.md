@@ -35,6 +35,7 @@
   ```bash
   docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
   ```
+  
     通过docker参数来指定环境变量
   ```bash
   docker run -d --restart unless-stopped -e GPT_ACCOUNTS=email@foo.com:foo -p 8090:8090 aidenlu/chatgpt-dingtalk-bot

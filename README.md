@@ -30,6 +30,7 @@
 1. 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
 
 2. 拉取Docker镜像并运行
+
 通过`.env`文件来指定环境变量
 ```bash
 docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot

@@ -28,6 +28,11 @@
 
 ## Quick start
 
+### Git拉取源代码运行
+1. 请先安装Python包管理工具[Poetry](https://python-poetry.org/docs/#installation)
+2. 进入项目根目录, 安装项目依赖环境: `poetry install --only main --no-root`
+3. 运行服务: `poetry run uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers`
+
 ### Docker 运行
 
 - 通过`.env`文件来批量设置环境变量

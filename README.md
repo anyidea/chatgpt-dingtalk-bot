@@ -28,7 +28,7 @@
 
 ## Quick start
 
-### Git拉取代码运行
+### 拉取Git仓库代码运行
 1. 请先安装Python包管理工具[Poetry](https://python-poetry.org/docs/#installation)
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -

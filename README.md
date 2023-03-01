@@ -34,7 +34,7 @@
 
 ## Installation
 
-### 拉取Git仓库代码运行
+#### 拉取Git仓库代码运行
 > 运行该项目需要Python3.8以上的环境，请先确保环境已经满足要求
 1. 请先安装Python包管理工具[Poetry](https://python-poetry.org/docs/#installation)
 ```bash
@@ -49,7 +49,7 @@ poetry install --only main --no-root
 poetry run uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers
 ```
 
-### Docker 运行
+#### Docker 运行
 
 - 通过`.env`文件来批量设置环境变量
 ```bash
@@ -74,7 +74,7 @@ aidenlu/chatgpt-dingtalk-bot
 > **ChatGPT Plus**用户可设置`GPT_PAID=true`，
 > 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
 
-### 配置钉钉机器人
+#### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)
 > ⚠️  机器人不要命名为chatgpt之类的，会被钉钉屏蔽
 ---

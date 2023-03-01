@@ -12,14 +12,15 @@
 > 🚀 浏览器版ChatGPT集成钉钉机器人, 支持单聊和群聊, 特别感谢 [ChatGPT](https://github.com/acheong08/ChatGPT)项目
 
 
+* Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
+* GitHub: <https://github.com/anyidea/chatgpt-dingtalk-bot>
+* Free software: MIT
+
+
 > **Note**
 >
 > ChatGPT目前尚未向`中国内地`和`中国香港`提供服务，因此运行该项目
 > 需要Proxy服务或者直接运行在海外云服务器上(日本、韩国、印度、美国等)
-
-* Documentation: <https://anyidea.github.io/chatgpt-dingtalk-bot>
-* GitHub: <https://github.com/anyidea/chatgpt-dingtalk-bot>
-* Free software: MIT
 
 
 ## Features

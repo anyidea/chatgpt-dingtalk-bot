@@ -97,6 +97,7 @@ skip_gitignore = true
 
 [tool.commitizen]
 version = "0.1.0"
+changelog_start_rev = "0.3.0"
 tag_format = "v$major.$minor.$patch$prerelease"
 version_files = [
     "pyproject.toml:version",

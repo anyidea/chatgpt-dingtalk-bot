@@ -71,7 +71,7 @@ aidenlu/chatgpt-dingtalk-bot
 ```
 > **Note**
 >
-> **ChatGPT Plus**用户可设置`GPT_PAID=true
+> **ChatGPT Plus**用户可设置`GPT_PAID=true`
 > 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
 
 ### 配置钉钉机器人

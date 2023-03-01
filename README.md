@@ -65,17 +65,14 @@ aidenlu/chatgpt-dingtalk-bot
 1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)
 > ⚠️ 机器人不要命名为chatgpt之类的，会被钉钉屏蔽
 ---
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" ali width="100%" height="80%">
->
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="80%">
+<br />
 2. 配置消息接收地址: `"http://<ip>:8090/chat"`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务的出口IP)
-> ⚠️ 机器人不要命名为chatgpt之类的，会被钉钉屏蔽
----
+<br />
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="100%" height="80%">
 <br />
 3. 点击上线机器人
-> ⚠️ 机器人不要命名为chatgpt之类的，会被钉钉屏蔽
----
-
+<br />
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005824.jpg" width="100%" height="80%">
 <br />
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="100%" height="80%">

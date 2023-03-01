@@ -92,7 +92,7 @@ aidenlu/chatgpt-dingtalk-bot
 
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="100%" height="80%">
 
-> [Warning]
+> **Warning**
 >
 > 钉钉虽然支持Markdown格式消息，但仅支持部分语法，建议使用text文本消息
 

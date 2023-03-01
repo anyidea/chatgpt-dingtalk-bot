@@ -36,7 +36,9 @@ docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped -p 8090:8090 
 --env-file .env \
 aidenlu/chatgpt-dingtalk-bot
 ```
-复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
+>
+>
+> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
 
 - 通过docker参数来指定环境变量
 ```bash

@@ -91,7 +91,7 @@ aidenlu/chatgpt-dingtalk-bot
 
 > **Note**
 >
-> 钉钉虽然支持Markdown格式消息，但支持不完整，建议使用text文本消息
+> 钉钉虽然支持Markdown格式消息，但仅支持部分语法，建议使用text文本消息
 
 
 ## Credits

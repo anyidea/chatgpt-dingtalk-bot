@@ -28,8 +28,11 @@
 
 ## Quick start
 
-### Git拉取源代码运行
+### Git拉取代码运行
 1. 请先安装Python包管理工具[Poetry](https://python-poetry.org/docs/#installation)
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
 2. 进入项目根目录, 安装项目依赖环境
 ```bash
 poetry install --only main --no-root

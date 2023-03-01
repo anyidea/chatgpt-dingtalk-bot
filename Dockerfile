@@ -1,10 +1,13 @@
+ARG APP_HOME=/app
+ARG POETRY_VERSION=1.4.0
+
 FROM --platform=$TARGETPLATFORM python:3.11-slim-bullseye as python
 
 # Python build stage
 FROM python as builder
 
-ARG APP_HOME=/app
-ARG POETRY_VERSION=1.4.0
+ARG APP_HOME
+ARG POETRY_VERSION
 WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
@@ -27,11 +30,10 @@ RUN  poetry install --only main --no-interaction --no-ansi --no-root
 # Python 'run' stage
 FROM python as runtime
 
-ARG APP_HOME=/app
+ARG APP_HOME
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
-ENV PATH="/app/.venv/bin:$PATH"
-ENV LC_ALL=C.UTF-8
+ENV PATH="${APP_HOME}/.venv/bin:$PATH"
 WORKDIR ${APP_HOME}
 
 RUN addgroup --system fastapi \

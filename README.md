@@ -59,8 +59,11 @@ aidenlu/chatgpt-dingtalk-bot
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 \
 -e GPT_ACCOUNTS=<email>:<password> \
+-e GPT_PROXY=http://<proxy-ip>:<port> \
+-e GPT_PAID=false \
 aidenlu/chatgpt-dingtalk-bot
 ```
+> ChatGPT Plus用户可设置`GPT_PAID=true`
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)
@@ -68,7 +71,7 @@ aidenlu/chatgpt-dingtalk-bot
 ---
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="80%">
 
-2. 配置消息接收地址: `http://<ip-address>:8090/chat`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务的出口IP)
+2. 配置消息接收地址: `http://<ip-address>:8090/chat`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务器的出口IP)
 ---
 
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="100%" height="80%">

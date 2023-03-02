@@ -82,6 +82,7 @@ aidenlu/chatgpt-dingtalk-bot
 ---
 
 2. 配置消息接收地址: `http://<ip-address>:8090/chat`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务器的出口IP)
+
 ---
 
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="100%" height="80%">

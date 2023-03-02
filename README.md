@@ -79,7 +79,7 @@ aidenlu/chatgpt-dingtalk-bot
 > ⚠️  机器人不要命名为chatgpt之类的，会被钉钉屏蔽
 ---
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="80%">
-
+---
 2. 配置消息接收地址: `http://<ip-address>:8090/chat`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务器的出口IP)
 ---
 

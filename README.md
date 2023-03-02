@@ -75,7 +75,7 @@ aidenlu/chatgpt-dingtalk-bot
 > 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
 
 ### 配置钉钉机器人
-1. 在钉钉管理后台添加企业内部机器人(需要有开发者后台权限)
+1. 在钉钉管理后台添加企业内部机器人(需要有管理后台权限)
 > ⚠️  机器人不要命名为chatgpt之类的，会被钉钉屏蔽
 ---
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="80%">

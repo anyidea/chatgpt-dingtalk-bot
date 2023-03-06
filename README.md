@@ -40,11 +40,15 @@
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
 ```
-2. 进入项目根目录, 安装项目依赖环境
+2. 拉取github仓库代码
+```bash
+git clone https://github.com/anyidea/chatgpt-dingtalk-bot
+```
+3. 进入项目根目录, 安装项目依赖环境
 ```bash
 poetry install --only main --no-root
 ```
-3. 通过uvicorn启动fastapi应用
+4. 通过uvicorn启动fastapi应用
 ```bash
 poetry run uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers
 ```

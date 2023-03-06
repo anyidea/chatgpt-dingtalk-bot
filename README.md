@@ -42,7 +42,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 ```
 2. 拉取github仓库代码
 ```bash
-git clone https://github.com/anyidea/chatgpt-dingtalk-bot
+git clone https://github.com/anyidea/chatgpt-dingtalk-bot.git
 ```
 3. 进入项目根目录, 安装项目依赖环境
 ```bash

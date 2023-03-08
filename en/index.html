@@ -418,8 +418,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick start
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    拉取Git仓库代码运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置钉钉机器人
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-httpip-address8090chatipchatgpt-dingtalk-botip" class="md-nav__link">
+    2. 配置消息接收地址: http://&lt;ip-address&gt;:8090/chat和出口IP白名单(部署chatgpt-dingtalk-bot服务器的出口IP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 点击上线机器人
   </a>
   
 </li>
@@ -548,8 +589,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick start
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    拉取Git仓库代码运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker 运行
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置钉钉机器人
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-httpip-address8090chatipchatgpt-dingtalk-botip" class="md-nav__link">
+    2. 配置消息接收地址: http://&lt;ip-address&gt;:8090/chat和出口IP白名单(部署chatgpt-dingtalk-bot服务器的出口IP)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 点击上线机器人
   </a>
   
 </li>
@@ -583,58 +665,96 @@
 <!-- BEGIN INCLUDE ../README.md -->
 <h1 id="chatgpt-dingtalk-bot">Chatgpt Dingtalk Bot<a class="headerlink" href="#chatgpt-dingtalk-bot" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot" /></a>
-<a href="https://www.python.org/"><img alt="Python Version" src="https://img.shields.io/badge/python-&gt;=3.8-blue" /></a>
 <a href="https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml/badge.svg" /></a>
+<a href="https://www.python.org/"><img alt="Python Version" src="https://img.shields.io/badge/python-&gt;=3.8-blue" /></a>
 <a href="https://hub.docker.com/r/aidenlu/chatgpt-dingtalk-bot"><img alt="Docker Image Size (latest by date)" src="https://img.shields.io/docker/image-size/aidenlu/chatgpt-dingtalk-bot" /></a>
 <a href="https://hub.docker.com/r/aidenlu/chatgpt-dingtalk-bot"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/aidenlu/chatgpt-dingtalk-bot" /></a>
 <a href="https://github.com/wccdev/cookiecutter-pypackage/"><img alt="Built with Cookiecutter" src="https://img.shields.io/badge/built%20with-Cookiecutter-ff69b4.svg?logo=cookiecutter" /></a>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a></p>
 <blockquote>
-<p>🚀 Web版ChatGPT集成到钉钉机器人, 支持单聊和群聊, 特别感谢 <a href="https://github.com/acheong08/ChatGPT">ChatGPT</a>项目</p>
+<p>🚀 官方浏览器版ChatGPT集成到钉钉机器人, 支持单聊和群聊, 特别感谢 <a href="https://github.com/acheong08/ChatGPT">ChatGPT</a>项目</p>
 </blockquote>
 <ul>
 <li>Documentation: <a href="https://anyidea.github.io/chatgpt-dingtalk-bot">https://anyidea.github.io/chatgpt-dingtalk-bot</a></li>
 <li>GitHub: <a href="https://github.com/anyidea/chatgpt-dingtalk-bot">https://github.com/anyidea/chatgpt-dingtalk-bot</a></li>
 <li>Free software: MIT</li>
 </ul>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>ChatGPT目前尚未向<code>中国内地</code>和<code>中国香港</code>提供服务，因此运行该项目
+需要Proxy服务或者直接运行在海外云服务器上(<code>日本</code>、<code>韩国</code>、<code>美国</code>等机房)</p>
+</blockquote>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>浏览器版本ChatGPT(非api版本)</li>
-<li>使用Fastapi框架，支持异步</li>
+<li>浏览器版本<code>ChatGPT</code>(免费)</li>
+<li>使用<code>Fastapi</code>框架，支持异步</li>
 <li>支持机器人群聊和单聊模式(暂只支持账号登录模式)</li>
-<li>支持Docker一键部署</li>
+<li>支持上下文聊天</li>
+<li>支持<code>Docker</code>一键部署</li>
 <li>支持配置多个账号，通过连接池来避免单账号的限制</li>
 </ul>
-<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>复制<code>.env.dist</code>文件，并改名为<code>.env</code>，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token</p>
-</li>
-<li>
-<p>拉取Docker镜像并运行
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker run -d --restart unless-stopped --env-file .env -p 8090:8090 aidenlu/chatgpt-dingtalk-bot
-</code></pre></div></p>
-</li>
-<li>
-<p>在钉钉管理后台添加企业内部机器人，然后配置消息接收地址和出口IP白名单，最后需要手动点击上线机器人。</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h3 id="git">拉取Git仓库代码运行<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
 <blockquote>
-<p>机器人不要命名为chatgpt之类的，会被钉钉屏蔽</p>
+<p>运行该项目需要Python3.8以上的环境，请先确保环境已经满足要求
+1. 请先安装Python包管理工具<a href="https://python-poetry.org/docs/#installation">Poetry</a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-sSL<span class="w"> </span>https://install.python-poetry.org<span class="w"> </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-
+</code></pre></div>
+2. 拉取github仓库代码
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/anyidea/chatgpt-dingtalk-bot.git
+</code></pre></div>
+3. 进入项目根目录, 安装项目依赖环境
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>install<span class="w"> </span>--only<span class="w"> </span>main<span class="w"> </span>--no-root
+</code></pre></div>
+4. 通过uvicorn启动fastapi应用
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>uvicorn<span class="w"> </span>chatbot.main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8090</span><span class="w"> </span>--proxy-headers
+</code></pre></div></p>
+</blockquote>
+<h3 id="docker">Docker 运行<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>通过<code>.env</code>文件来批量设置环境变量
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="o">=</span>chatgpt-dingtalk-bot<span class="w"> </span>--restart<span class="o">=</span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>:8090<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>--env-file<span class="w"> </span>.env<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>aidenlu/chatgpt-dingtalk-bot
+</code></pre></div></p>
+<blockquote>
+<p>复制<code>.env.dist</code>文件，并改名为<code>.env</code>，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token</p>
+</blockquote>
+</li>
+<li>
+<p>或者通过<code>-e</code>或<code>--env</code>参数来设置环境变量
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="o">=</span>chatgpt-dingtalk-bot<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>:8090<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-e<span class="w"> </span><span class="nv">GPT_ACCOUNTS</span><span class="o">=</span>&lt;email&gt;:&lt;password&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>-e<span class="w"> </span><span class="nv">GPT_PROXY</span><span class="o">=</span>http://&lt;proxy-ip&gt;:&lt;port&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>-e<span class="w"> </span><span class="nv">GPT_PAID</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>aidenlu/chatgpt-dingtalk-bot
+</code></pre></div></p>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>**ChatGPT Plus**用户可设置<code>GPT_PAID=true</code>，
+普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_1">配置钉钉机器人<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在钉钉管理后台添加企业内部机器人(需要有管理后台权限)<blockquote>
+<p>⚠️  机器人不要命名为chatgpt之类的，会被钉钉屏蔽</p>
 </blockquote>
 </li>
 </ol>
-<div align=center>
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" ali width="80%" height="80%">
-
-
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="80%" height="80%">
-
-
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005824.jpg" width="80%" height="80%">
-
-
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="80%" height="80%">
-</div>
-
+<hr />
+<p><img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="60%"></p>
+<h2 id="2-httpip-address8090chatipchatgpt-dingtalk-botip">2. 配置消息接收地址: <code>http://&lt;ip-address&gt;:8090/chat</code>和出口IP白名单(部署<code>chatgpt-dingtalk-bot</code>服务器的出口IP)<a class="headerlink" href="#2-httpip-address8090chatipchatgpt-dingtalk-botip" title="Permanent link">&para;</a></h2>
+<p><img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="100%" height="60%"></p>
+<h2 id="3">3. 点击上线机器人<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005824.jpg" width="100%" height="60%"></p>
+<p><img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="100%" height="60%"></p>
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>钉钉虽然支持Markdown格式消息，但仅支持部分语法，建议使用text文本消息</p>
+</blockquote>
 <h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
 <p>This package was created with <a href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> and the <a href="https://github.com/wccdev/cookiecutter-pypackage">wccdev/cookiecutter-pypackage</a> project template.</p>
 <!-- END INCLUDE -->

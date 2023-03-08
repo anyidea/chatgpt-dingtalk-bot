@@ -13,10 +13,19 @@ WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 
+RUN apt-get update && apt-get install -y gcc curl
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && apt-get install --reinstall libc6-dev -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+
 # Install apt packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
-  build-essential
+  build-essential \
+  # dependencies for building tiktoken
+  curl \
+  && curl https://sh.rustup.rs -sSf | sh -s -- -y \
+  && apt-get install --reinstall libc6-dev -y
 
 # Speed up installing poetry
 RUN python3 -m pip install poetry==${POETRY_VERSION} \

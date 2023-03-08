@@ -20,12 +20,13 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
   # dependencies for building tiktoken
+  gcc \
   curl \
   && curl https://sh.rustup.rs -sSf | sh -s -- -y \
   && apt-get install --reinstall libc6-dev -y
 
 # Speed up installing poetry
-RUN python3 -m pip install poetry==${POETRY_VERSION} \
+RUN python3 -m pip install -U pip && python3 -m pip install poetry==${POETRY_VERSION} \
     && poetry --version
 
 # Requirements are installed here to ensure they will be cached.

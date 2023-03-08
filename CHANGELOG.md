@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.1 (2023-03-08)
+
+### Fix
+
+- upgrade  to latest version
+
 ## v0.4.0 (2023-03-01)
 
 ### Feat

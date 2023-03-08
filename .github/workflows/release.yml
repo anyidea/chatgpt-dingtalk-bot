@@ -77,11 +77,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Write release version
-        run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          echo Version: $VERSION
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+      - id: get_version
+        uses: battila7/get-version-action@v2
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
@@ -89,5 +86,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:${VERSION}
+            ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:${{ steps.get_version.outputs.version-without-v }}
             ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:latest

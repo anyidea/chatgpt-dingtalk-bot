@@ -2156,14 +2156,14 @@ requests = ">=2.0.1,<3.0.0"
 
 [[package]]
 name = "revchatgpt"
-version = "3.3.4"
+version = "4.0.2"
 description = "ChatGPT is a reverse engineering of OpenAI's ChatGPT API"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "revChatGPT-3.3.4-py3-none-any.whl", hash = "sha256:7a301e5d5381978c6588cbb3a5490731f02ab8cd6245107f6596abc8147e629f"},
-    {file = "revChatGPT-3.3.4.tar.gz", hash = "sha256:b84b48745e7b0aa0ae912cf772f02205e76f091b8bd423fca51060c407f9cf57"},
+    {file = "revChatGPT-4.0.2-py3-none-any.whl", hash = "sha256:5d1e564a6e6d91816b8da4becd82a58867705b52ded612bc52a7d237fae4f67f"},
+    {file = "revChatGPT-4.0.2.tar.gz", hash = "sha256:361f87ce1b6df081b96a784b6a60298807feb509da8b46d7d9c0dacaeac5b0e2"},
 ]
 
 [package.dependencies]
@@ -2855,4 +2855,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.*,<3.12"
-content-hash = "4a651443823cd24606e28270b67f24c7948fb1e229834bfe83cfceff119c1b4f"
+content-hash = "03b65187cf6d6157e176b6d35cdb22a8f6db5fadf481aecd3ae386b3eb75810c"

@@ -63,15 +63,16 @@ aidenlu/chatgpt-dingtalk-bot
 ```
 >
 >
-> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token
-> `Access token`登陆后通过如下链接获取: https://chat.openai.com/api/auth/session
+> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token登录
+> `Access token`需要登陆后通过如下链接获取: https://chat.openai.com/api/auth/session
 
 - 或者通过`-e`或`--env`参数来设置环境变量
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 \
 -e GPT_ACCOUNTS=<email>:<password> \
 -e GPT_PROXY=http://<proxy-ip>:<port> \
--e GPT_PAID=false \
+-e GPT_PAID=true \
+-e GPT_MODEL=gpt-4 \
 aidenlu/chatgpt-dingtalk-bot
 ```
 > **Note**

@@ -41,7 +41,7 @@ def init_chatbots():
 
     for access_token in access_tokens:
         c = dict(access_token=access_token, **config)
-        bots.append(c)
+        bots.append(AsyncChatbot(config=c))
 
     return bots
 

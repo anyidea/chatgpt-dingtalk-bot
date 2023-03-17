@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chatgpt-dingtalk-bot"
-version = "0.4.1"
+version = "0.4.4"
 homepage = "https://github.com/anyidea/chatgpt-dingtalk-bot"
 description = "A dingtalk chatbot powered by chatGPT.."
 authors = ["Aiden Lu <allaher@icloud.com>"]
@@ -96,7 +96,7 @@ skip_gitignore = true
 #skip_glob = docs/conf.py
 
 [tool.commitizen]
-version = "0.4.1"
+version = "0.4.4"
 changelog_start_rev = "0.3.0"
 tag_format = "v$major.$minor.$patch$prerelease"
 version_files = [

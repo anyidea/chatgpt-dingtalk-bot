@@ -79,8 +79,8 @@ aidenlu/chatgpt-dingtalk-bot
 ```
 > **Note**
 >
-> **ChatGPT Plus**用户可设置`GPT_PAID=true`，
-> 普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数
+> **ChatGPT Plus**用户可设置`GPT_PAID=true`和`GPT_MODEL=gpt-4`，
+> 普通账号和Plus账号一起配置时Plus账号暂不支持配置`GPT_PAID`及`GPT_MODEL`参数
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有管理后台权限)

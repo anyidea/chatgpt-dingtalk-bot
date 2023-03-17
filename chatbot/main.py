@@ -9,7 +9,7 @@ from .constants import BUSSY_MESSAGE, WELCOME_MESSAGE
 from .database import conversation, database
 from .dingtalk import DingtalkCorpAPI
 from .schemas import ConversationTypeEnum, DingtalkAskMessage
-from .utils import get_conversation_id, init_chatbots
+from .utils import get_conversation_id, init_chatbots, get_chatbot_id
 
 # Initial app
 app = FastAPI()
@@ -59,7 +59,7 @@ async def ask_and_reply(
     chatbot = None
     try:
         chatbot = await pool.get_object()
-        chatbot_id = chatbot.config["email"]
+        chatbot_id = get_chatbot_id(chatbot)
         select_stmt = select(
             conversation.c.id,
             conversation.c.gpt_conversation,
@@ -143,7 +143,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         return
     elif prompt.startswith("清空"):
         for chatbot in chatbots:
-            chatbot_id = chatbot.config["email"]
+            chatbot_id = get_chatbot_id(chatbot)
             await chatbot.delete_conversation(conversation_id)
             if conversation_type == ConversationTypeEnum.group:
                 await database.execute(
@@ -161,7 +161,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         return
     elif prompt.startswith("重置"):
         for chatbot in chatbots:
-            chatbot_id = chatbot.config["email"]
+            chatbot_id = get_chatbot_id(chatbot)
             if conversation_type == ConversationTypeEnum.group:
                 await database.execute(
                     update(conversation)

@@ -10,6 +10,7 @@ class ChatGPTSettings(BaseSettings):
     parent_id: Optional[str]
     proxy: Optional[str]
     paid: bool = False
+    model: Optional[str]
 
     class Config:
         env_file = ".env"

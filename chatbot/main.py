@@ -123,7 +123,7 @@ async def ask_and_reply(
         if chatbot:
             pool.release_object(chatbot)
 
-    await callback_bot(webhook_url, response, conversation_type)
+    await callback_bot(webhook_url, response, conversation_type, sender_userid)
 
 
 @app.post("/chat")
@@ -185,7 +185,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
         nickname,
         sender_userid,
         webhook_url,
-        message.conversationType,
+        conversation_type,
         conversation_id,
         conversation_title,
     )

@@ -681,17 +681,24 @@
 </ul>
 <blockquote>
 <p><strong>Note</strong></p>
+<ul>
+<li>
 <p>ChatGPT目前尚未向<code>中国内地</code>和<code>中国香港</code>提供服务，因此运行该项目
 需要Proxy服务或者直接运行在海外云服务器上(<code>日本</code>、<code>韩国</code>、<code>美国</code>等机房)</p>
+</li>
+<li>
+<p>由于使用该服务违反了Openai的Policy，故账号存在一定被封的风险，请知晓！(目前Plus用户暂时安全)
+</p>
+</li>
+</ul>
 </blockquote>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>浏览器版本<code>ChatGPT</code>(免费)</li>
 <li>使用<code>Fastapi</code>框架，支持异步</li>
-<li>支持机器人群聊和单聊模式(暂只支持账号登录模式)</li>
-<li>支持上下文聊天</li>
+<li>支持机器人群聊和单聊模式，支持上下文聊天</li>
+<li>支持配置多个账号，通过连接池来避免单账号请求限制和并发提问</li>
 <li>支持<code>Docker</code>一键部署</li>
-<li>支持配置多个账号，通过连接池来避免单账号的限制</li>
 </ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="git">拉取Git仓库代码运行<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
@@ -719,7 +726,8 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>aidenlu/chatgpt-dingtalk-bot
 </code></pre></div></p>
 <blockquote>
-<p>复制<code>.env.dist</code>文件，并改名为<code>.env</code>，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token</p>
+<p>复制<code>.env.dist</code>文件，并改名为<code>.env</code>，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token登录
+<code>Access token</code>需要登陆后通过如下链接获取: <a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a></p>
 </blockquote>
 </li>
 <li>
@@ -727,13 +735,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="o">=</span>chatgpt-dingtalk-bot<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>:8090<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-e<span class="w"> </span><span class="nv">GPT_ACCOUNTS</span><span class="o">=</span>&lt;email&gt;:&lt;password&gt;<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>-e<span class="w"> </span><span class="nv">GPT_PROXY</span><span class="o">=</span>http://&lt;proxy-ip&gt;:&lt;port&gt;<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>-e<span class="w"> </span><span class="nv">GPT_PAID</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>aidenlu/chatgpt-dingtalk-bot
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>-e<span class="w"> </span><span class="nv">GPT_PAID</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>-e<span class="w"> </span><span class="nv">GPT_MODEL</span><span class="o">=</span>gpt-4<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>aidenlu/chatgpt-dingtalk-bot
 </code></pre></div></p>
 <blockquote>
 <p><strong>Note</strong></p>
-<p>**ChatGPT Plus**用户可设置<code>GPT_PAID=true</code>，
-普通账号和Plus账号一起配置时Plus账号暂不支持配置GPT_PAID参数</p>
+<p>**ChatGPT Plus**用户可设置<code>GPT_PAID=true</code>和<code>GPT_MODEL=gpt-4</code>，
+普通账号和Plus账号一起配置时Plus账号暂不支持配置<code>GPT_PAID</code>及<code>GPT_MODEL</code>参数</p>
 </blockquote>
 </li>
 </ul>
@@ -753,7 +762,7 @@
 <p><img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="100%" height="60%"></p>
 <blockquote>
 <p><strong>Warning</strong></p>
-<p>钉钉虽然支持Markdown格式消息，但仅支持部分语法，建议使用text文本消息</p>
+<p>钉钉虽然支持Markdown格式消息，但仅支持部分语法且移动端和PC端展示会有差异，建议使用text文本消息</p>
 </blockquote>
 <h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">&para;</a></h2>
 <p>This package was created with <a href="https://github.com/cookiecutter/cookiecutter">Cookiecutter</a> and the <a href="https://github.com/wccdev/cookiecutter-pypackage">wccdev/cookiecutter-pypackage</a> project template.</p>

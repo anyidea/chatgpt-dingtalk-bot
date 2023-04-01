@@ -22,6 +22,8 @@
 > - ChatGPT目前尚未向`中国内地`和`中国香港`提供服务，因此运行该项目
 > 需要Proxy服务或者直接运行在海外云服务器上(`日本`、`韩国`、`美国`等机房)
 >
+> Updated on 2023-04-01: 目前由于Openai站点：`https://explorer.api.openai.com/` ssl协议异常，导致无法账号密码登录使用， 请使用access_token登录(https://chat.openai.com/api/auth/session)
+>
 
 
 ## Features

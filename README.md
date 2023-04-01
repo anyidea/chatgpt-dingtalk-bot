@@ -24,7 +24,7 @@
 >
 
 ## Updated on 2023-04-01
-目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，导致无法账号密码登录使用， 请使用如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
+目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，导致无法账号密码登录， 请使用如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
 
 
 ## Features

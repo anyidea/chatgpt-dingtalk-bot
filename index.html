@@ -411,6 +411,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#updated-on-2023-04-01" class="md-nav__link">
+    Updated on 2023-04-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
@@ -582,6 +589,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#updated-on-2023-04-01" class="md-nav__link">
+    Updated on 2023-04-01
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     Features
   </a>
@@ -672,7 +686,7 @@
 <a href="https://github.com/wccdev/cookiecutter-pypackage/"><img alt="Built with Cookiecutter" src="https://img.shields.io/badge/built%20with-Cookiecutter-ff69b4.svg?logo=cookiecutter" /></a>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a></p>
 <blockquote>
-<p>🚀 官方浏览器版ChatGPT集成到钉钉机器人, 支持单聊和群聊, 特别感谢 <a href="https://github.com/acheong08/ChatGPT">ChatGPT</a>项目</p>
+<p>🚀 官方**浏览器版**ChatGPT集成到钉钉机器人, 支持单聊和群聊, 特别感谢 <a href="https://github.com/acheong08/ChatGPT">ChatGPT</a>项目</p>
 </blockquote>
 <ul>
 <li>Documentation: <a href="https://anyidea.github.io/chatgpt-dingtalk-bot">https://anyidea.github.io/chatgpt-dingtalk-bot</a></li>
@@ -682,20 +696,17 @@
 <blockquote>
 <p><strong>Note</strong></p>
 <ul>
-<li>
-<p>ChatGPT目前尚未向<code>中国内地</code>和<code>中国香港</code>提供服务，因此运行该项目
-需要Proxy服务或者直接运行在海外云服务器上(<code>日本</code>、<code>韩国</code>、<code>美国</code>等机房)</p>
-</li>
-<li>
-<p>由于使用该服务违反了Openai的Policy，故账号存在一定被封的风险，请知晓！(目前Plus用户暂时安全)
-</p>
+<li>ChatGPT目前尚未向<code>中国内地</code>和<code>中国香港</code>提供服务，因此运行该项目
+需要Proxy服务或者直接运行在海外云服务器上(<code>日本</code>、<code>韩国</code>、<code>美国</code>等机房)
 </li>
 </ul>
 </blockquote>
+<h2 id="updated-on-2023-04-01">Updated on 2023-04-01<a class="headerlink" href="#updated-on-2023-04-01" title="Permanent link">&para;</a></h2>
+<p>目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，导致无法账号密码登录， 请使用如下链接获取access_token后登录(<a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>)</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>浏览器版本<code>ChatGPT</code>(免费)</li>
-<li>使用<code>Fastapi</code>框架，支持异步</li>
+<li>浏览器版本<code>ChatGPT</code>(<strong>免费</strong>)</li>
+<li>使用<code>Fastapi</code>框架，支持异步，单实例部署即可支持高并发请求</li>
 <li>支持机器人群聊和单聊模式，支持上下文聊天</li>
 <li>支持配置多个账号，通过连接池来避免单账号请求限制和并发提问</li>
 <li>支持<code>Docker</code>一键部署</li>

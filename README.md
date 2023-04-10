@@ -1,4 +1,4 @@
-# Chatgpt Dingtalk Bot
+# ChatGPT Dingtalk Bot
 
 
 [![License](https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot)](https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE)

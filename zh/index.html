@@ -677,7 +677,7 @@
 
 
 <!-- BEGIN INCLUDE ../README.md -->
-<h1 id="chatgpt-dingtalk-bot">Chatgpt Dingtalk Bot<a class="headerlink" href="#chatgpt-dingtalk-bot" title="Permanent link">&para;</a></h1>
+<h1 id="chatgpt-dingtalk-bot">ChatGPT Dingtalk Bot<a class="headerlink" href="#chatgpt-dingtalk-bot" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/anyidea/chatgpt-dingtalk-bot/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/anyidea/chatgpt-dingtalk-bot" /></a>
 <a href="https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml"><img alt="Build Status" src="https://github.com/anyidea/chatgpt-dingtalk-bot/actions/workflows/ci.yml/badge.svg" /></a>
 <a href="https://www.python.org/"><img alt="Python Version" src="https://img.shields.io/badge/python-&gt;=3.8-blue" /></a>
@@ -702,7 +702,7 @@
 </ul>
 </blockquote>
 <h2 id="updated-on-2023-04-01">Updated on 2023-04-01<a class="headerlink" href="#updated-on-2023-04-01" title="Permanent link">&para;</a></h2>
-<p>目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，导致无法账号密码登录， 请使用如下链接获取access_token后登录(<a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>)</p>
+<p>目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，详情见：<a href="https://github.com/acheong08/ChatGPT/issues/1236">https://github.com/acheong08/ChatGPT/issues/1236</a> 导致无法通过邮箱密码登录， 请手动登陆后访问如下链接获取access_token后登录(<a href="https://chat.openai.com/api/auth/session">https://chat.openai.com/api/auth/session</a>)</p>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>浏览器版本<code>ChatGPT</code>(<strong>免费</strong>)</li>
@@ -742,7 +742,7 @@
 </blockquote>
 </li>
 <li>
-<p>或者通过<code>-e</code>或<code>--env</code>参数来设置环境变量
+<p>或者通过<code>-e</code>/<code>--env</code>参数来设置环境变量
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="o">=</span>chatgpt-dingtalk-bot<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>:8090<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>-e<span class="w"> </span><span class="nv">GPT_ACCOUNTS</span><span class="o">=</span>&lt;email&gt;:&lt;password&gt;<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>-e<span class="w"> </span><span class="nv">GPT_PROXY</span><span class="o">=</span>http://&lt;proxy-ip&gt;:&lt;port&gt;<span class="w"> </span><span class="se">\</span>

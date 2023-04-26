@@ -24,7 +24,7 @@
 >
 
 ## Updated on 2023-04-01
-目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，详情见：https://github.com/acheong08/ChatGPT/issues/1236 导致无法通过邮箱密码登录， 请手动登陆后访问如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
+目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，详情见：https://github.com/acheong08/ChatGPT/issues/1236 导致无法通过*邮箱密码*登录， 请手动登陆后访问如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
 
 
 ## Features

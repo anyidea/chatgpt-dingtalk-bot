@@ -185,6 +185,21 @@ files = [
 ]
 
 [[package]]
+name = "async-tio"
+version = "1.3.2"
+description = "An unoffical API wrapper for tio.run"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "async_tio-1.3.2-py3-none-any.whl", hash = "sha256:9b12816f90747b8d7ff6cfb03202f6dc9e06949f08be48278bbe722d9d1bd34d"},
+]
+
+[package.dependencies]
+aiohttp = "*"
+typing-extensions = "*"
+
+[[package]]
 name = "attrs"
 version = "22.2.0"
 description = "Classes Without Boilerplate"
@@ -2483,17 +2498,18 @@ requests = ">=2.0.1,<3.0.0"
 
 [[package]]
 name = "revchatgpt"
-version = "4.2.3"
+version = "5.0.0"
 description = "ChatGPT is a reverse engineering of OpenAI's ChatGPT API"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "revChatGPT-4.2.3-py3-none-any.whl", hash = "sha256:5463b9feed9649f49417cfeb734c33eb97e14630be72d049ce6835a74e593a2c"},
-    {file = "revChatGPT-4.2.3.tar.gz", hash = "sha256:e6687ceae17d92e9c701e1f7d9d89da5d91e2d2d0453ee20ebfd7720e42460d9"},
+    {file = "revChatGPT-5.0.0-py3-none-any.whl", hash = "sha256:1e0d93dd9a1e22455c21c84b347f1b6b932daf57c3042fa2fb5da6980c313f3c"},
+    {file = "revChatGPT-5.0.0.tar.gz", hash = "sha256:c8f5e377149b628ff097881a81f76227a714708e985298385c8611d92c828cf1"},
 ]
 
 [package.dependencies]
+async-tio = "*"
 httpx = {version = "*", extras = ["socks"]}
 openai = "*"
 OpenAIAuth = "0.3.6"
@@ -3289,4 +3305,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.*,<3.12"
-content-hash = "7d693389ab653f7064f50784aa60d529ab62a98b499a7fbb2cf96d09761d4ff8"
+content-hash = "d858e69476129056bd322fa3c5e4d061e1389996bbe8b6c863cac2ac1ac88179"

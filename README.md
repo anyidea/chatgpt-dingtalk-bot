@@ -23,9 +23,6 @@
 > 需要Proxy服务或者直接运行在海外云服务器上(`日本`、`韩国`、`美国`等机房)
 >
 
-## Updated on 2023-04-01
-目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，详情见：https://github.com/acheong08/ChatGPT/issues/1236 导致无法通过*邮箱密码*登录， 请手动登陆后访问如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
-
 
 ## Features
 
@@ -66,13 +63,13 @@ aidenlu/chatgpt-dingtalk-bot
 ```
 >
 >
-> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token登录
+> 复制`.env.dist`文件，并改名为`.env`，填写GPT_ACCESS_TOKENS，支持多个账号和token登录
 > `Access token`需要登陆后通过如下链接获取: https://chat.openai.com/api/auth/session
 
 - 或者通过`-e`/`--env`参数来设置环境变量
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 \
--e GPT_ACCOUNTS=<email>:<password> \
+-e GPT_ACCESS_TOKENS=<token1>,<token2> \
 -e GPT_PROXY=http://<proxy-ip>:<port> \
 -e GPT_PAID=true \
 -e GPT_MODEL=gpt-4 \

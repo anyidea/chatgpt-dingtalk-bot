@@ -100,7 +100,7 @@ aidenlu/chatgpt-dingtalk-bot
 
 > **Warning**
 >
-> 钉钉虽然支持Markdown格式消息，但仅支持部分语法且移动端和桌面端展示会有差异，建议使用text文本消息
+> 钉钉虽然支持Markdown格式消息，但仅支持部分语法且移动端和桌面端显示会有差异，建议使用text文本消息
 
 
 ## Credits

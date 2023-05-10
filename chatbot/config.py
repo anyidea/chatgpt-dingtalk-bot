@@ -4,12 +4,10 @@ from pydantic import BaseSettings
 
 
 class ChatGPTSettings(BaseSettings):
-    accounts: Optional[str]
-    access_tokens: Optional[str]
-    conversation_id: Optional[str]
-    parent_id: Optional[str]
+    api_key: Optional[str]
+    temperature: float = 0.5
+    max_tokens: int = None
     proxy: Optional[str]
-    paid: bool = False
     model: Optional[str]
 
     class Config:

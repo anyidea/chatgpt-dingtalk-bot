@@ -34,7 +34,7 @@
 ## Installation
 
 ### 拉取Git仓库代码运行
-> 运行该项目需要Python3.8以上的环境，请先确保环境已经满足要求
+> 运行该项目需要Python3.9以上的环境，请先确保环境已经满足要求
 1. 请先安装Python包管理工具[Poetry](https://python-poetry.org/docs/#installation)
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -

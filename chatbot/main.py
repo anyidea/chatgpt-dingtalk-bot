@@ -54,7 +54,7 @@ async def ask_and_reply(
     conversation_title: str,
 ):
     """获取gpt回答"""
-    response = await chatbot.ask_async(prompt, role=sender_userid)
+    response = await chatbot.ask_async(prompt, convo_id=conversation_id, role=sender_userid)
 
     await callback_bot(webhook_url, response, conversation_type, sender_userid)
 

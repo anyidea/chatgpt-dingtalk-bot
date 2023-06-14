@@ -78,7 +78,7 @@ aidenlu/chatgpt-dingtalk-bot:api
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有管理后台权限)
-> ⚠️  机器人不要命名为chatgpt之类的，会被钉钉屏蔽
+> ⚠️  机器人不要命名为chatgpt之类的，会被钉钉风控
 ---
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="60%">
 

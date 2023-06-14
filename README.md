@@ -23,16 +23,12 @@
 > 需要Proxy服务或者直接运行在海外云服务器上(`日本`、`韩国`、`美国`等机房)
 >
 
-## Updated on 2023-04-01
-目前由于Openai站点https://explorer.api.openai.com/ ssl协议异常，详情见：https://github.com/acheong08/ChatGPT/issues/1236 导致无法通过邮箱密码登录， 请手动登陆后访问如下链接获取access_token后登录(https://chat.openai.com/api/auth/session)
-
 
 ## Features
 
 * 浏览器版本`ChatGPT`(**免费**)
 * 使用`Fastapi`框架，支持异步，单实例部署即可支持高并发请求
 * 支持机器人群聊和单聊模式，支持上下文聊天
-* 支持配置多个账号，通过连接池来避免单账号请求限制和并发提问
 * 支持`Docker`一键部署
 
 ## Installation
@@ -62,26 +58,23 @@ poetry run uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped -p 8090:8090 \
 --env-file .env \
-aidenlu/chatgpt-dingtalk-bot
+aidenlu/chatgpt-dingtalk-bot:api
 ```
 >
 >
-> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_ACCOUNTS或者GPT_ACCESS_TOKENS，二选一即可，支持多个账号和token登录
-> `Access token`需要登陆后通过如下链接获取: https://chat.openai.com/api/auth/session
+> 复制`.env.dist`文件，并改名为`.env`，填写账号密码GPT_API_KEY
+> `API KEY`需要登陆OpenAI管理后台获取: https://platform.openai.com/account/api-keys
 
 - 或者通过`-e`/`--env`参数来设置环境变量
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 \
--e GPT_ACCOUNTS=<email>:<password> \
--e GPT_PROXY=http://<proxy-ip>:<port> \
--e GPT_PAID=true \
--e GPT_MODEL=gpt-4 \
-aidenlu/chatgpt-dingtalk-bot
+-e GPT_API_KEY=<key> \
+-e GPT_MODEL=gpt-3.5-turbo \
+aidenlu/chatgpt-dingtalk-bot:api
 ```
 > **Note**
 >
-> **ChatGPT Plus**用户可设置`GPT_PAID=true`和`GPT_MODEL=gpt-4`，
-> 普通账号和Plus账号一起配置时Plus账号暂不支持配置`GPT_PAID`及`GPT_MODEL`参数
+> **gpt-4**需要用户已开通访问权限，
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部机器人(需要有管理后台权限)

@@ -54,7 +54,9 @@ async def ask_and_reply(
     conversation_title: str,
 ):
     """获取gpt回答"""
-    response = await chatbot.ask_async(prompt, convo_id=conversation_id, role=sender_userid)
+    response = await chatbot.ask_async(
+        prompt, convo_id=conversation_id, role=sender_userid
+    )
 
     await callback_bot(webhook_url, response, conversation_type, sender_userid)
 
@@ -69,7 +71,14 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
     webhook_url = message.sessionWebhook
     conversation_title = message.conversationTitle
 
-    if prompt.lower().strip() == "":
+    if prompt.lower() in ("", "帮助", "help"):
+        await callback_bot(
+            webhook_url, WELCOME_MESSAGE, conversation_type, sender_userid
+        )
+        return
+    elif prompt.startswith("重置"):
+        chatbot.reset(convo_id=conversation_id)
+        await callback_bot(webhook_url, "会话已重置", conversation_type, sender_userid)
         return
 
     background_tasks.add_task(

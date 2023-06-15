@@ -8,7 +8,7 @@ class ChatGPTSettings(BaseSettings):
     temperature: float = 0.5
     max_tokens: int = None
     proxy: Optional[str]
-    model: Optional[str]
+    model: Optional[str] = "gpt-3.5-turbo-0613"
 
     class Config:
         env_file = ".env"

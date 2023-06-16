@@ -1,7 +1,7 @@
 INTERACTIVE_CARD_JSON_SAMPLE = {
     "config": {"autoLayout": True, "enableForward": True},
     "header": {
-        "title": {"type": "text", "text": "AI智能助手"},
+        "title": {"type": "text", "text": "AI助手"},
         "logo": "@lALPDfJ6V_FPDmvNAfTNAfQ",
     },
     "contents": [
@@ -9,6 +9,7 @@ INTERACTIVE_CARD_JSON_SAMPLE = {
             "type": "text",
             "text": "",
             "id": "",
+            "maxLines": 1000,
         },
     ],
 }

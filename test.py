@@ -99,7 +99,7 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
         ]
 
         for i in "的更加快一点，光辉你还好么？？？？asdasdasdasdasdasdasfskdahfk13123h1uh23uihasd":
-            time.sleep(1)
+            time.sleep(0.1)
             INTERACTIVE_CARD_JSON_SAMPLE_1["contents"][0]["text"] += i
 
             self.update_card(

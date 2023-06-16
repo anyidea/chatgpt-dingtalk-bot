@@ -55,7 +55,6 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
             )
         ):
             card["contents"][0]["text"] += query
-
             # 先回复一个文本卡片
             if i == 0:
                 card_biz_id = self.reply_card(
@@ -63,11 +62,16 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
                     incoming_message,
                     False,
                 )
-            else:
+            elif i % 4 == 0:
                 self.update_card(
                     card_biz_id,
                     card,
                 )
+
+        self.update_card(
+            card_biz_id,
+            card,
+        )
 
         return AckMessage.STATUS_OK, 'OK'
 

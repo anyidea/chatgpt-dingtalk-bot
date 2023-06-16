@@ -6,11 +6,14 @@ from pydantic import BaseSettings
 class ChatGPTSettings(BaseSettings):
     accounts: Optional[str]
     access_tokens: Optional[str]
-    conversation_id: Optional[str]
-    parent_id: Optional[str]
+    temperature: Optional[float]
+    disable_history: Optional[bool] = False
     proxy: Optional[str]
-    paid: bool = False
     model: Optional[str]
+    paid: bool = False
+    plugin_ids: Optional[str]
+    base_url: Optional[str]
+    PUID: Optional[str]
 
     class Config:
         env_file = ".env"

@@ -141,7 +141,7 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
             webhook_url, WELCOME_MESSAGE, conversation_type, sender_userid
         )
         return
-    elif prompt.startswith("清空"):
+    elif prompt.startswith("重置"):
         for chatbot in chatbots:
             chatbot_id = get_chatbot_id(chatbot)
             await chatbot.delete_conversation(conversation_id)
@@ -156,25 +156,6 @@ async def chat(message: DingtalkAskMessage, background_tasks: BackgroundTasks):
                     delete(conversation)
                     .where(conversation.c.user_id == sender_userid)
                     .where(conversation.c.chatbot_id == chatbot_id)
-                )
-        await callback_bot(webhook_url, "会话已删除", conversation_type, sender_userid)
-        return
-    elif prompt.startswith("重置"):
-        for chatbot in chatbots:
-            chatbot_id = get_chatbot_id(chatbot)
-            if conversation_type == ConversationTypeEnum.group:
-                await database.execute(
-                    update(conversation)
-                    .where(conversation.c.dingtalk_conversation == conversation_id)
-                    .where(conversation.c.chatbot_id == chatbot_id)
-                    .values(parent_conversation=None)
-                )
-            else:
-                await database.execute(
-                    update(conversation)
-                    .where(conversation.c.user_id == sender_userid)
-                    .where(conversation.c.chatbot_id == chatbot_id)
-                    .values(parent_conversation=None)
                 )
         await callback_bot(webhook_url, "会话已重置", conversation_type, sender_userid)
         return

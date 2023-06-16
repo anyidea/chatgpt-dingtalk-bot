@@ -70,12 +70,14 @@ aidenlu/chatgpt-dingtalk-bot:api
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped \
 -e GPT_API_KEY=<key> \
+-e DINGTALK_APP_KEY=<app_key> \
+-e DINGTALK_APP_SECRET=<app_secret> \
 -e GPT_MODEL=gpt-3.5-turbo \
 aidenlu/chatgpt-dingtalk-bot:api
 ```
 > **Note**
 >
-> **gpt-4**需要用户已开通访问权限，
+> **gpt-4**模型需要用户已开通访问权限，
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部应用(需要有管理后台权限)

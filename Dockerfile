@@ -1,5 +1,5 @@
 ARG PYTHON_VERSION=3.11-slim-bullseye
-ARG POETRY_VERSION=1.4.0
+ARG POETRY_VERSION=1.5.1
 ARG APP_HOME=/app
 
 FROM --platform=$TARGETPLATFORM python:${PYTHON_VERSION} as python
@@ -44,8 +44,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PATH="${APP_HOME}/.venv/bin:$PATH"
 WORKDIR ${APP_HOME}
 
-RUN addgroup --system fastapi \
-    && adduser --system --ingroup fastapi fastapi
+RUN addgroup --system chatbot \
+    && adduser --system --ingroup chatbot chatbot
 
 # Install required system dependencies
 RUN apt-get update \
@@ -55,17 +55,17 @@ RUN apt-get update \
 
 # All absolute dir copies ignore workdir instruction. All relative dir copies are wrt to the workdir instruction
 # copy python dependency packages from builder
-COPY --from=builder --chown=fastapi:fastapi ${APP_HOME} ${APP_HOME}
+COPY --from=builder --chown=chatbot:chatbot ${APP_HOME} ${APP_HOME}
 
-COPY --chown=fastapi:fastapi ./docker/start /start
+COPY --chown=chatbot:chatbot ./docker/start /start
 RUN sed -i 's/\r$//g' /start \
     && chmod +x /start
 
 # copy application code to WORKDIR
-COPY --chown=fastapi:fastapi . ${APP_HOME}
+COPY --chown=chatbot:chatbot . ${APP_HOME}
 # make django owner of the WORKDIR directory as well.
-RUN chown fastapi:fastapi ${APP_HOME}
+RUN chown chatbot:chatbot ${APP_HOME}
 
-USER fastapi
+USER chatbot
 
 ENTRYPOINT ["/start"]

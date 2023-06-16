@@ -78,7 +78,7 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
                     incoming_message,
                     False,
                 )
-            elif i % 5 == 0:
+            elif i % 3 == 0:
                 self.update_card(
                     card_biz_id,
                     card,

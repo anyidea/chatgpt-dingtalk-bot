@@ -17,8 +17,8 @@ class ChatGPTSettings(BaseSettings):
 
 
 class DingtalkSettings(BaseSettings):
-    app_key: str = ""
-    app_secret: str = ""
+    app_key: str
+    app_secret: str
 
     class Config:
         env_file = ".env"

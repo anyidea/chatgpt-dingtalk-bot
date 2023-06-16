@@ -1,5 +1,4 @@
 import uuid
-import time
 from revChatGPT.V3 import Chatbot
 
 from .config import gpt_settings
@@ -22,11 +21,11 @@ def init_chatbot():
     """
     config = gpt_settings
     bot = Chatbot(
-        api_key= config.api_key,
-        engine = config.model,
-        max_tokens = config.max_tokens,
-        temperature = config.temperature,
-        proxy= config.proxy,
+        api_key=config.api_key,
+        engine=config.model,
+        max_tokens=config.max_tokens,
+        temperature=config.temperature,
+        proxy=config.proxy,
     )
     return bot
 

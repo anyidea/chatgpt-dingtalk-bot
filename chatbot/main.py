@@ -50,22 +50,16 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
         input_text = incoming_message.text.content.strip()
 
         if input_text in ["", "帮助", "help"]:
-            card["contents"][0]["text"] = WELCOME_MESSAGE
-            card["contents"][0]["tag"] = "help"
-            self.reply_card(
-                card,
+            self.reply_text(
+                WELCOME_MESSAGE,
                 incoming_message,
-                False,
             )
             return AckMessage.STATUS_OK, 'OK'
         elif input_text in ["重置", "reset"]:
-            card["contents"][0]["text"] = "会话已重置"
-            card["contents"][0]["tag"] = "reset"
             self.chatbot.reset(convo_id=incoming_message.conversation_id)
-            self.reply_card(
-                card,
+            self.reply_text(
+                "会话已重置",
                 incoming_message,
-                True,
             )
             return AckMessage.STATUS_OK, 'OK'
 

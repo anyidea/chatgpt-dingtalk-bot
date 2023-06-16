@@ -1,9 +1,10 @@
 import logging
+import time
 from dingtalk_stream import AckMessage
 import dingtalk_stream
 from copy import deepcopy
 from .templates import INTERACTIVE_CARD_JSON_SAMPLE
-import time
+from .constants import WELCOME_MESSAGE
 
 from .utils import init_chatbot
 from .config import dingtalk_settings
@@ -46,10 +47,31 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
         incoming_message = dingtalk_stream.ChatbotMessage.from_dict(callback.data)
         card = deepcopy(INTERACTIVE_CARD_JSON_SAMPLE)
         card["contents"][0]["id"] = f"text_{int(time.time() * 100)}"
+        input_text = incoming_message.text.content.strip()
+
+        if input_text in ["", "帮助", "help"]:
+            card["contents"][0]["text"] = WELCOME_MESSAGE
+            card["contents"][0]["tag"] = "help"
+            self.reply_card(
+                card,
+                incoming_message,
+                False,
+            )
+            return AckMessage.STATUS_OK, 'OK'
+        elif input_text in ["重置", "reset"]:
+            card["contents"][0]["text"] = "会话已重置"
+            card["contents"][0]["tag"] = "reset"
+            self.chatbot.reset(convo_id=incoming_message.conversation_id)
+            self.reply_card(
+                card,
+                incoming_message,
+                True,
+            )
+            return AckMessage.STATUS_OK, 'OK'
 
         for i, query in enumerate(
             self.chatbot.ask_stream(
-                incoming_message.text.content.strip(),
+                input_text,
                 role=incoming_message.sender_staff_id,
                 convo_id=incoming_message.conversation_id,
             )

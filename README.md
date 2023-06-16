@@ -27,7 +27,8 @@
 ## Features
 
 * API版本`ChatGPT`(**不是免费**)，没有那些花里胡哨的功能，很简洁！
-* 使用`Fastapi`框架，支持异步，单实例部署即可支持高并发请求
+* 使用钉钉机器人Stream模式推送消息，配置简单，不依赖也不需要暴露公网IP，无需向公网开放提供任何服务端口
+* 支持打字机特效
 * 支持机器人群聊和单聊模式，支持上下文聊天
 * 支持`Docker`一键部署
 
@@ -47,16 +48,16 @@ git clone https://github.com/anyidea/chatgpt-dingtalk-bot.git
 ```bash
 poetry install --only main --no-root
 ```
-4. 通过uvicorn启动fastapi应用
+4. 启动应用
 ```bash
-poetry run uvicorn chatbot.main:app --host 0.0.0.0 --port 8090 --proxy-headers
+poetry run python -m chatbot
 ```
 
 ### Docker 运行
 
 - 通过`.env`文件来批量设置环境变量
 ```bash
-docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped -p 8090:8090 \
+docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped \
 --env-file .env \
 aidenlu/chatgpt-dingtalk-bot:api
 ```
@@ -67,7 +68,7 @@ aidenlu/chatgpt-dingtalk-bot:api
 
 - 或者通过`-e`/`--env`参数来设置环境变量
 ```bash
-docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped -p 8090:8090 \
+docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped \
 -e GPT_API_KEY=<key> \
 -e GPT_MODEL=gpt-3.5-turbo \
 aidenlu/chatgpt-dingtalk-bot:api
@@ -77,22 +78,26 @@ aidenlu/chatgpt-dingtalk-bot:api
 > **gpt-4**需要用户已开通访问权限，
 
 ### 配置钉钉机器人
-1. 在钉钉管理后台添加企业内部机器人(需要有管理后台权限)
+1. 在钉钉管理后台添加企业内部应用(需要有管理后台权限)
 > ⚠️  机器人不要命名为chatgpt之类的，会被钉钉风控
 ---
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005625.jpg" width="100%" height="60%">
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/create_app.png" width="100%" height="60%">
 
-2. 配置消息接收地址: `http://<ip-address>:8090/chat`和出口IP白名单(部署`chatgpt-dingtalk-bot`服务器的出口IP)
+2. 点击应用内机器人配置页
 ---
 
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005746.jpg" width="100%" height="60%">
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/click_bot.png" width="100%" height="60%">
 
-3. 点击上线机器人
+
+3. 配置机器人并开启stream模式
 ---
 
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228005824.jpg" width="100%" height="60%">
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/config_bot.png" width="100%" height="60%">
 
-<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/main/.github/assets/20230228010827.jpg" width="100%" height="60%">
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/enable_stream.png" width="100%" height="60%">
+
+<img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/stream_chat.gif" width="100%" height="60%">
+
 
 > **Warning**
 >

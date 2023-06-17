@@ -86,7 +86,10 @@ aidenlu/chatgpt-dingtalk-bot:api
 <img src="https://raw.githubusercontent.com/anyidea/chatgpt-dingtalk-bot/api/.github/assets/create_app.png" width="100%" height="60%">
 
 2. 应用内机器人添加单聊和群聊权限
-<img src="![image](https://github.com/anyidea/chatgpt-dingtalk-bot/assets/48710760/2c7f2d1c-2f7a-4649-99db-290d99031b62)" width="100%" height="60%">
+---
+
+<img src="![image](https://github.com/anyidea/chatgpt-dingtalk-bot/assets/48710760/52f5d040-0e26-4fb5-986c-a529f91a8c9a)" width="100%" height="60%">
+
 
 3. 点击应用内机器人配置页
 ---

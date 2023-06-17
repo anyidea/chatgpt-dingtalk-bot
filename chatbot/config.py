@@ -19,6 +19,7 @@ class ChatGPTSettings(BaseSettings):
 class DingtalkSettings(BaseSettings):
     app_key: str
     app_secret: str
+    stream_speed: int = 10
 
     class Config:
         env_file = ".env"

@@ -48,6 +48,8 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
         card = deepcopy(INTERACTIVE_CARD_JSON_SAMPLE)
         card["contents"][0]["id"] = f"text_{int(time.time() * 100)}"
         input_text = incoming_message.text.content.strip()
+        card_biz_id = None
+        is_first_reply = True
 
         if input_text in ["", "帮助", "help"]:
             self.reply_text(
@@ -71,23 +73,32 @@ class CardBotHandler(dingtalk_stream.AsyncChatbotHandler):
             )
         ):
             card["contents"][0]["text"] += query
-            # 先回复一个文本卡片
-            if i == 0:
-                card_biz_id = self.reply_card(
-                    card,
-                    incoming_message,
-                    False,
-                )
-            elif i % dingtalk_settings.stream_size == 0:
+
+            if i % dingtalk_settings.stream_size == 0:
+                # 先回复一个文本卡片
+                if is_first_reply:
+                    card_biz_id = self.reply_card(
+                        card,
+                        incoming_message,
+                        False,
+                    )
+                    is_first_reply = False
                 self.update_card(
                     card_biz_id,
                     card,
                 )
 
-        self.update_card(
-            card_biz_id,
-            card,
-        )
+        if is_first_reply:
+            self.reply_card(
+                card,
+                incoming_message,
+                False,
+            )
+        else:
+            self.update_card(
+                card_biz_id,
+                card,
+            )
 
         return AckMessage.STATUS_OK, 'OK'
 

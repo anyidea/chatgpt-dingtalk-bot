@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master, main ]
+    branches: [ master, main, api, browser ]
     paths-ignore:
       - '**/README.md'
       - 'docs/**'
@@ -26,7 +26,7 @@ jobs:
     # The type of runner that the job will run on
     strategy:
       matrix:
-        python-versions: ["3.8", "3.9"]
+        python-versions: ["3.9"]
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 

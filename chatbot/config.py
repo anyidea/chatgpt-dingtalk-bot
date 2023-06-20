@@ -4,10 +4,10 @@ from pydantic import BaseSettings
 
 
 class ChatGPTSettings(BaseSettings):
-    api_key: Optional[str]
+    api_key: str
     temperature: float = 0.5
     max_tokens: int = None
-    proxy: Optional[str]
+    proxy: Optional[str] = None
     model: Optional[str] = "gpt-3.5-turbo-0613"
 
     class Config:

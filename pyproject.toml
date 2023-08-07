@@ -1,20 +1,20 @@
 [tool.poetry]
 name = "chatgpt-dingtalk-bot"
-version = "0.4.8"
+version = "0.5.0"
 homepage = "https://github.com/anyidea/chatgpt-dingtalk-bot"
 description = "A dingtalk chatbot powered by chatGPT.."
 authors = ["Aiden Lu <allaher@icloud.com>"]
 readme = "README.md"
 license = "MIT"
 classifiers = [
-  'Development Status :: 2 - Pre-Alpha',
-  'Intended Audience :: Developers',
-  'License :: OSI Approved :: MIT License',
-  'Natural Language :: English',
-  'Programming Language :: Python :: 3',
-  'Programming Language :: Python :: 3.8',
-  'Programming Language :: Python :: 3.9',
-  'Programming Language :: Python :: 3.10',
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
 ]
 packages = [{ include = "chatbot" }, { include = "tests", format = "sdist" }]
 

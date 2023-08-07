@@ -20,11 +20,11 @@ packages = [{ include = "chatbot" }, { include = "tests", format = "sdist" }]
 
 [tool.poetry.dependencies]
 python = ">=3.8.*,<3.12"
-revchatgpt = "^6.2.6"
+revchatgpt = "^6.8.6"
 httpx = { extras = ["socks"], version = "^0.23.3" }
 python-dotenv = "^0.21.1"
 databases = { extras = ["aiosqlite"], version = "^0.7.0" }
-dingtalk-stream = "^0.4.0"
+dingtalk-stream = "^0.8.1"
 pydantic = "^1.10.9"
 
 [tool.poetry.group.dev.dependencies]

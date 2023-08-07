@@ -179,20 +179,6 @@ files = [
 ]
 
 [[package]]
-name = "async-tio"
-version = "1.3.2"
-description = "An unoffical API wrapper for tio.run"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "async_tio-1.3.2-py3-none-any.whl", hash = "sha256:9b12816f90747b8d7ff6cfb03202f6dc9e06949f08be48278bbe722d9d1bd34d"},
-]
-
-[package.dependencies]
-aiohttp = "*"
-typing-extensions = "*"
-
-[[package]]
 name = "attrs"
 version = "22.2.0"
 description = "Classes Without Boilerplate"
@@ -561,29 +547,6 @@ ssh = ["bcrypt (>=3.1.5)"]
 test = ["hypothesis (>=1.11.4,!=3.79.2)", "iso8601", "pretend", "pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-subtests", "pytest-xdist", "pytz"]
 
 [[package]]
-name = "curl-cffi"
-version = "0.5.6"
-description = "libcurl ffi bindings for Python, with impersonation support"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "curl_cffi-0.5.6-cp37-abi3-macosx_10_9_x86_64.whl", hash = "sha256:d134cf4d78d070d6822e7f3fe29492d80b84af0befd6e2e7d5969b9ff37dc916"},
-    {file = "curl_cffi-0.5.6-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:c5dcf9f6a128780f8b9aad81df4d091bbd3e1a51da6991ed594bd3fcdb7f867a"},
-    {file = "curl_cffi-0.5.6-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:00e8c83b0dfde19c3470e5a07350bc8124db11723ef4e6d346cd634bb30ebc42"},
-    {file = "curl_cffi-0.5.6-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7a9df9fabff038f1ac9e7e6f32b5edb5d8df8c2eec64f53f513de1766c17ffdb"},
-    {file = "curl_cffi-0.5.6-cp37-abi3-win_amd64.whl", hash = "sha256:dcadfe0bbba3955626db2834221e146b0b9909d1601e91a0051e9e5dabb8fb1e"},
-    {file = "curl_cffi-0.5.6.tar.gz", hash = "sha256:30eea55149bd66dbb11aa467e3b4e039085bfac38da7fb8ae694425d9b7061da"},
-]
-
-[package.dependencies]
-cffi = ">=1.12.0"
-
-[package.extras]
-build = ["cibuildwheel", "wheel"]
-dev = ["autoflake (==1.4)", "black (==22.8.0)", "coverage (==6.4.1)", "cryptography (==38.0.3)", "flake8 (==6.0.0)", "flake8-bugbear (==22.7.1)", "flake8-pie (==0.15.0)", "httpx (==0.23.1)", "isort (==5.10.1)", "mypy (==0.971)", "pytest (==7.1.2)", "pytest-asyncio (==0.19.0)", "pytest-trio (==0.7.0)", "trio (==0.21.0)", "trio-typing (==0.7.0)", "trustme (==0.9.0)", "types-certifi (==2021.10.8.2)", "uvicorn (==0.18.3)"]
-test = ["cryptography (==38.0.3)", "httpx (==0.23.1)", "pytest (==7.1.2)", "pytest-asyncio (==0.19.0)", "pytest-trio (==0.7.0)", "trio (==0.21.0)", "trio-typing (==0.7.0)", "trustme (==0.9.0)", "types-certifi (==2021.10.8.2)", "uvicorn (==0.18.3)"]
-
-[[package]]
 name = "databases"
 version = "0.7.0"
 description = "Async database support for Python."
@@ -621,13 +584,13 @@ files = [
 
 [[package]]
 name = "dingtalk-stream"
-version = "0.4.0"
+version = "0.8.1"
 description = "A Python library for sending messages to DingTalk chatbot"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dingtalk-stream-0.4.0.tar.gz", hash = "sha256:4f7dae94e0ea81bbbb50a8024558aff05941977b47d96f42061bd40a5ee4a265"},
-    {file = "dingtalk_stream-0.4.0-py3-none-any.whl", hash = "sha256:dd6ccbf55e4429158cd1d025558888abf3f95e5b8f5bd98684f715f48b39e80d"},
+    {file = "dingtalk-stream-0.8.1.tar.gz", hash = "sha256:bd04ab5a64e9148f9537b79809c82a31da9a87c63385a8c5a8498f7e67c32ba2"},
+    {file = "dingtalk_stream-0.8.1-py3-none-any.whl", hash = "sha256:af619804292430e839e504a11c39baeca3dc9984ae9e724329734e30d1815222"},
 ]
 
 [package.dependencies]
@@ -1730,17 +1693,17 @@ wandb = ["numpy", "openpyxl (>=3.0.7)", "pandas (>=1.2.3)", "pandas-stubs (>=1.1
 
 [[package]]
 name = "openaiauth"
-version = "1.0.2"
+version = "3.0.0"
 description = "OpenAI Authentication Reverse Engineered"
 optional = false
 python-versions = "*"
 files = [
-    {file = "OpenAIAuth-1.0.2-py3-none-any.whl", hash = "sha256:9a8678d7ba10a95e7776a72497d51187055106b9795b79e56331ab89ecdb57f6"},
-    {file = "OpenAIAuth-1.0.2.tar.gz", hash = "sha256:d1577c82f13682e1cd96b3c16a1bb6dcda5416b247be6e90e8d48d6b05fd81b6"},
+    {file = "OpenAIAuth-3.0.0-py3-none-any.whl", hash = "sha256:a013dac29099f1000c457e953d8319d5d21186228864290786f2ed386c2500d6"},
+    {file = "OpenAIAuth-3.0.0.tar.gz", hash = "sha256:f52ae9b6285e88ce6cf5823a1edebc6a10c630500359f050800594058dc4109f"},
 ]
 
 [package.dependencies]
-requests = "*"
+tls-client = "*"
 
 [[package]]
 name = "packaging"
@@ -2360,23 +2323,22 @@ requests = ">=2.0.1,<3.0.0"
 
 [[package]]
 name = "revchatgpt"
-version = "6.2.6"
+version = "6.8.6"
 description = "ChatGPT is a reverse engineering of OpenAI's ChatGPT API"
 optional = false
 python-versions = "*"
 files = [
-    {file = "revChatGPT-6.2.6-py3-none-any.whl", hash = "sha256:a40bbd49762be367f83d97da2c17fd1807534352bf4e86aa5319b99d1c497f7e"},
-    {file = "revChatGPT-6.2.6.tar.gz", hash = "sha256:583217f1d87ff595f06b6dbfe2be0cbed9c26810ddd2ab5c3fcece74eb565fc1"},
+    {file = "revChatGPT-6.8.6-py3-none-any.whl", hash = "sha256:ee215d4cc6383d499e8bd761fe6de80570cdee21db52b1e2f218f355576b5621"},
+    {file = "revChatGPT-6.8.6.tar.gz", hash = "sha256:69e7fa02d318548099dcb6bdffb4fa788dcd12c1816f09a5716c44bf10e44ac9"},
 ]
 
 [package.dependencies]
-async-tio = "*"
-curl-cffi = "*"
 httpx = {version = "*", extras = ["socks"]}
 openai = "*"
-OpenAIAuth = ">=1.0.2"
+OpenAIAuth = ">=3.0.0"
 prompt-toolkit = "*"
 requests = {version = "*", extras = ["socks"]}
+rich = "*"
 tiktoken = ">=0.3.0"
 
 [[package]]
@@ -2612,6 +2574,17 @@ files = [
 blobfile = ">=2"
 regex = ">=2022.1.18"
 requests = ">=2.26.0"
+
+[[package]]
+name = "tls-client"
+version = "0.2.1"
+description = "Advanced Python HTTP Client."
+optional = false
+python-versions = "*"
+files = [
+    {file = "tls_client-0.2.1-py3-none-any.whl", hash = "sha256:124a710952b979d5e20b4e2b7879b7958d6e48a259d0f5b83101055eb173f0bd"},
+    {file = "tls_client-0.2.1.tar.gz", hash = "sha256:473fb4c671d9d4ca6b818548ab6e955640dd589767bfce520830c5618c2f2e2b"},
+]
 
 [[package]]
 name = "toml"
@@ -3020,4 +2993,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.*,<3.12"
-content-hash = "a2534ee5389867791b2d8efc1e3f03402ae4129fbb4dbc5e31a013e0088222ab"
+content-hash = "42e0287628ffd5e2c41395df01573f5aa29fb90347e87325524eaade8e9ffae2"

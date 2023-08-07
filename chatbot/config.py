@@ -5,10 +5,14 @@ from pydantic import BaseSettings
 
 class ChatGPTSettings(BaseSettings):
     api_key: str
+    api_url: Optional[str] = None
     temperature: Optional[float] = 0.5
     max_tokens: Optional[int] = None
+    base_prompt: Optional[str] = None
+    reply_count: Optional[int] = None
+    truncate_limit: Optional[int] = None
     proxy: Optional[str] = None
-    model: Optional[str] = "gpt-3.5-turbo-0613"
+    model: Optional[str] = "gpt-3.5-turbo"
 
     class Config:
         env_file = ".env"
@@ -19,8 +23,8 @@ class ChatGPTSettings(BaseSettings):
 class DingtalkSettings(BaseSettings):
     app_key: str
     app_secret: str
-    stream_enable: Optional[bool] = True
-    stream_size: Optional[int] = 10
+    stream_enable: Optional[bool] = False
+    stream_size: Optional[int] = 15
 
     class Config:
         env_file = ".env"

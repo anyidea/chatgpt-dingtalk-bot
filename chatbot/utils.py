@@ -1,4 +1,5 @@
 import uuid
+import os
 from revChatGPT.V3 import Chatbot
 
 from .config import gpt_settings
@@ -20,13 +21,21 @@ def init_chatbot():
     初始化
     """
     config = gpt_settings
-    bot = Chatbot(
-        api_key=config.api_key,
-        engine=config.model,
-        max_tokens=config.max_tokens,
-        temperature=config.temperature,
-        proxy=config.proxy,
-    )
+
+    if config.api_url is not None:
+        os.environ["API_URL"] = config.api_url
+
+    kwargs = {
+        "api_key": config.api_key,
+        "system_prompt": config.base_prompt,
+        "proxy": config.proxy,
+        "temperature": config.temperature,
+        "reply_count": config.reply_count,
+        "engine": config.model,
+        "truncate_limit": config.truncate_limit,
+    }
+    kwargs = {k: v for k, v in kwargs.items() if v is not None}
+    bot = Chatbot(**kwargs)
     return bot
 
 

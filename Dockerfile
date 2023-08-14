@@ -16,7 +16,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 
 # Install apt packages
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apt-get update --fix-missing && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
   # dependencies for building tiktoken
@@ -48,7 +48,7 @@ RUN addgroup --system chatbot \
     && adduser --system --ingroup chatbot chatbot
 
 # Install required system dependencies
-RUN apt-get update \
+RUN apt-get update --fix-missing \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*

@@ -1,5 +1,44 @@
 # Changelog
 
+## v0.5.0 (2023-08-14)
+
+### Feat
+
+- support more params
+- support more params
+- support disable stream reply #20
+- fix missing reply
+- use dingtalk stream mode
+- support api_key
+
+### Fix
+
+- set default value #21
+- fix stream reply
+- add help commands
+- add help commands
+- fix bugs
+- add help commands
+- add help commands
+- add help commands
+- add help commands
+- add help commands
+- add help commands
+- add start cmd
+- support reset conversation
+
+## v0.4.9 (2023-04-26)
+
+## v0.4.8 (2023-04-17)
+
+## v0.4.7 (2023-04-03)
+
+## v0.4.6 (2023-03-28)
+
+### Fix
+
+- fix #3
+
 ## v0.4.5 (2023-04-17)
 
 ## v0.4.7 (2023-04-03)

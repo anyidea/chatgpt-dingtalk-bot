@@ -92,7 +92,7 @@ skip_gitignore = true
 #skip_glob = docs/conf.py
 
 [tool.commitizen]
-version = "0.4.5"
+version = "0.5.0"
 changelog_start_rev = "0.3.0"
 tag_format = "v$major.$minor.$patch$prerelease"
 version_files = ["pyproject.toml:version", "chatbot/__init__.py"]

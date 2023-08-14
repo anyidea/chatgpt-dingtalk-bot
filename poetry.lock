@@ -584,13 +584,13 @@ files = [
 
 [[package]]
 name = "dingtalk-stream"
-version = "0.8.1"
+version = "0.10.0"
 description = "A Python library for sending messages to DingTalk chatbot"
 optional = false
 python-versions = "*"
 files = [
-    {file = "dingtalk-stream-0.8.1.tar.gz", hash = "sha256:bd04ab5a64e9148f9537b79809c82a31da9a87c63385a8c5a8498f7e67c32ba2"},
-    {file = "dingtalk_stream-0.8.1-py3-none-any.whl", hash = "sha256:af619804292430e839e504a11c39baeca3dc9984ae9e724329734e30d1815222"},
+    {file = "dingtalk-stream-0.10.0.tar.gz", hash = "sha256:dde26172ae852e5d1622db8a15b3567b4749517b37e3b2d37cf43f23093c077d"},
+    {file = "dingtalk_stream-0.10.0-py3-none-any.whl", hash = "sha256:505286c230831ee23d72e8b845b1f7d4f624cfa0534be17df476f23c176b975b"},
 ]
 
 [package.dependencies]
@@ -2993,4 +2993,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.*,<3.12"
-content-hash = "42e0287628ffd5e2c41395df01573f5aa29fb90347e87325524eaade8e9ffae2"
+content-hash = "0257198bb595cb5914dbcfc88b59cf8057fc9aec39a38d54edbe44a6e160099d"

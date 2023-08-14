@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chatgpt-dingtalk-bot"
-version = "0.5.0"
+version = "0.5.1"
 homepage = "https://github.com/anyidea/chatgpt-dingtalk-bot"
 description = "A dingtalk chatbot powered by chatGPT.."
 authors = ["Aiden Lu <allaher@icloud.com>"]
@@ -24,7 +24,7 @@ revchatgpt = "^6.8.6"
 httpx = { extras = ["socks"], version = "^0.23.3" }
 python-dotenv = "^0.21.1"
 databases = { extras = ["aiosqlite"], version = "^0.7.0" }
-dingtalk-stream = "^0.8.1"
+dingtalk-stream = "^0.10.0"
 pydantic = "^1.10.9"
 
 [tool.poetry.group.dev.dependencies]

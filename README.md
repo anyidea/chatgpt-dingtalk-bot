@@ -57,7 +57,7 @@ poetry install --only main --no-root
 poetry run python -m chatbot
 ```
 
-### Docker 运行
+### Docker 运行（推荐）
 
 - 通过`.env`文件来批量设置环境变量
 ```bash

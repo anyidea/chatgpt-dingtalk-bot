@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.6.0 (2023-12-21)
+
+### Feat
+
+- add some new models support
+
 ## v0.5.0 (2023-08-14)
 
 ### Feat

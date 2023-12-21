@@ -434,7 +434,7 @@
         
           <li class="md-nav__item">
   <a href="#docker" class="md-nav__link">
-    Docker 运行
+    Docker 运行（推荐）
   </a>
   
 </li>
@@ -612,7 +612,7 @@
         
           <li class="md-nav__item">
   <a href="#docker" class="md-nav__link">
-    Docker 运行
+    Docker 运行（推荐）
   </a>
   
 </li>
@@ -695,20 +695,23 @@
 </ul>
 <blockquote>
 <p><strong>Note</strong></p>
-<ul>
-<li>ChatGPT目前尚未向中国<code>大陆</code>和<code>香港</code>等地区提供服务，因此运行该项目
+<p>ChatGPT目前尚未向中国<code>大陆</code>和<code>香港</code>等地区提供服务，因此运行该项目
 需要Proxy服务或者直接运行在海外云服务器上(<code>日本</code>、<code>韩国</code>、<code>美国</code>等机房)
-</li>
-</ul>
+</p>
 </blockquote>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
-<li>API版本<code>ChatGPT</code>(<strong>不是免费</strong>)，没有那些花里胡哨的功能，很简洁！</li>
-<li>支持打字机特效（注意：需要额外消耗钉钉api调用次数）</li>
+<li>API版本<code>ChatGPT</code>(<strong>不是免费</strong>)，没有那些花里胡哨的功能，主打一个简单！</li>
+<li>支持打字机特效</li>
 <li>支持机器人群聊和单聊模式，支持上下文聊天</li>
-<li>使用钉钉机器人Stream模式推送消息，配置简单，不依赖也不需要暴露公网IP，无需向公网开放端口</li>
+<li>使用钉钉机器人**Stream模式**推送消息，配置简单，不依赖也不需要暴露公网IP，无需向公网开放端口</li>
 <li>支持<code>Docker</code>一键部署</li>
 </ul>
+<blockquote>
+<p><strong>Note</strong>
+开启打字机特效会额外消耗钉钉开放平台api调用次数！请自行考虑是否开启
+</p>
+</blockquote>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="git">拉取Git仓库代码运行<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
 <blockquote>
@@ -726,7 +729,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>chatbot
 </code></pre></div></p>
 </blockquote>
-<h3 id="docker">Docker 运行<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<h3 id="docker">Docker 运行（推荐）<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>通过<code>.env</code>文件来批量设置环境变量

@@ -1,8 +1,27 @@
 import uuid
 import os
-from revChatGPT.V3 import Chatbot
+from revChatGPT import V3
 
 from .config import gpt_settings
+
+V3.ENGINES = [
+    "gpt-3.5-turbo",
+    "gpt-3.5-turbo-16k",
+    "gpt-3.5-turbo-0301",
+    "gpt-3.5-turbo-0613",
+    "gpt-3.5-turbo-16k-0613",
+    "gpt-3.5-turbo-1106",
+    "gpt-3.5-turbo-instruct",
+    "gpt-3.5-turbo-instruct-0914",
+    "gpt-4",
+    "gpt-4-0314",
+    "gpt-4-32k",
+    "gpt-4-32k-0314",
+    "gpt-4-0613",
+    "gpt-4-32k-0613",
+    "gpt-4-1106-preview",
+    "gpt-4-vision-preview",
+]
 
 
 def get_conversation_id(convo_id: str):
@@ -35,7 +54,7 @@ def init_chatbot():
         "truncate_limit": config.truncate_limit,
     }
     kwargs = {k: v for k, v in kwargs.items() if v is not None}
-    bot = Chatbot(**kwargs)
+    bot = V3.Chatbot(**kwargs)
     return bot
 
 

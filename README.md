@@ -63,7 +63,7 @@ poetry run python -m chatbot
 ```bash
 docker run -d --name=chatgpt-dingtalk-bot --restart=unless-stopped \
 --env-file .env \
-aidenlu/chatgpt-dingtalk-bot:api
+aidenlu/chatgpt-dingtalk-bot:latest
 ```
 >
 >
@@ -77,7 +77,7 @@ docker run -d --name=chatgpt-dingtalk-bot --restart unless-stopped \
 -e DINGTALK_APP_KEY=<app_key> \
 -e DINGTALK_APP_SECRET=<app_secret> \
 -e GPT_MODEL=gpt-3.5-turbo \
-aidenlu/chatgpt-dingtalk-bot:api
+aidenlu/chatgpt-dingtalk-bot:latest
 ```
 > **Note**
 >

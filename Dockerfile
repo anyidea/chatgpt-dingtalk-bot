@@ -12,7 +12,7 @@ ARG POETRY_VERSION
 WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
-ENV PATH="/root/.cargo/bin:${PATH}"
+ENV PATH="/root/.cargo/bin:/root/.local/bin:${PATH}"
 
 
 # Install apt packages
@@ -23,8 +23,7 @@ RUN apt-get update --fix-missing && apt-get install --no-install-recommends -y \
   pipx
 
 # Speed up installing poetry
-RUN pipx install poetry==${POETRY_VERSION} \
-    && pipx ensurepath
+RUN pipx install poetry==${POETRY_VERSION}
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./poetry.lock ./pyproject.toml ./

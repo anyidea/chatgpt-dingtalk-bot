@@ -6,11 +6,11 @@ site_description: >-
   A dingtalk chatbot powered by chatGPT.
 
 # Repository
-repo_url: https://github.com/anyidea/chatgpt-dingtalk-bot
 repo_name: anyidea/chatgpt-dingtalk-bot
+repo_url: https://github.com/anyidea/chatgpt-dingtalk-bot
 
 # Copyright
-# copyright: Copyright &copy; 2021 - 2022 Aiden Lu
+# copyright: Copyright &copy; 2021 - 2023 Aiden Lu
 
 # Configuration
 theme:
@@ -61,15 +61,27 @@ theme:
 plugins:
   - include-markdown
   - mkdocstrings
-  - search
+  - search:
+      separator: '[\s\u200b\-]'
   - i18n:
-      default_language: en
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
       languages:
-        en: English
-        zh: 中文
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
 
 # Customization
 extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
@@ -87,7 +99,6 @@ extra:
     - icon: material/email
       link: "mailto:allaher@icloud.com"
 
-
 # Extensions
 markdown_extensions:
   - abbr
@@ -96,7 +107,6 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
-  - tables
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -106,13 +116,16 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
+      normalize_issue_symbols: true
       repo_url_shorthand: true
       user: squidfunk
       repo: mkdocs-material
@@ -125,11 +138,13 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - meta
-
 
 # Page tree
 nav:

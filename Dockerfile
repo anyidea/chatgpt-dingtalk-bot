@@ -1,5 +1,5 @@
-ARG PYTHON_VERSION=3.11-slim-bullseye
-ARG POETRY_VERSION=1.5.1
+ARG PYTHON_VERSION=3.11-slim-bookworm
+ARG POETRY_VERSION=1.7.1
 ARG APP_HOME=/app
 
 FROM --platform=$TARGETPLATFORM python:${PYTHON_VERSION} as python
@@ -19,14 +19,11 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN apt-get update --fix-missing && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
   build-essential \
-  # dependencies for building tiktoken
-  gcc \
-  curl \
-  && curl https://sh.rustup.rs -sSf | sh -s -- -y \
-  && apt-get install --reinstall libc6-dev -y
+  # dependencies for installing poetry
+  pipx
 
 # Speed up installing poetry
-RUN python3 -m pip install -U pip && python3 -m pip install poetry==${POETRY_VERSION} \
+RUN pipx install poetry==${POETRY_VERSION} \
     && poetry --version
 
 # Requirements are installed here to ensure they will be cached.
@@ -68,4 +65,4 @@ RUN chown chatbot:chatbot ${APP_HOME}
 
 USER chatbot
 
-ENTRYPOINT ["/start"]
+CMD ["/start"]

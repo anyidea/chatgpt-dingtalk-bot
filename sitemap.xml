@@ -1,51 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/"/>
     </url>
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/api/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/api/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/api/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/api/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/api/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/api/"/>
     </url>
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/changelog/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/changelog/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/changelog/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/changelog/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/changelog/"/>
     </url>
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/contributing/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/contributing/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/contributing/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/contributing/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/contributing/"/>
     </url>
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/installation/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/installation/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/installation/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/installation/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/installation/"/>
     </url>
     <url>
-         <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/usage/</loc>
-         <lastmod>2023-12-22</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/en/usage/"/>
-         <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/usage/"/>
-         
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/usage/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/usage/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/usage/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/api/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/api/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/changelog/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/changelog/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/contributing/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/contributing/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/installation/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/installation/"/>
+    </url>
+    <url>
+        <loc>https://anyidea.github.io/chatgpt-dingtalk-bot/zh/usage/</loc>
+        <lastmod>2023-12-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://anyidea.github.io/chatgpt-dingtalk-bot/zh/usage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://anyidea.github.io/chatgpt-dingtalk-bot/usage/"/>
     </url>
 </urlset>

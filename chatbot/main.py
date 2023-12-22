@@ -128,7 +128,7 @@ def main():
         dingtalk_settings.app_key, dingtalk_settings.app_secret
     )
     client = dingtalk_stream.DingTalkStreamClient(credential)
-    client.register_callback_hanlder(
+    client.register_callback_handler(
         dingtalk_stream.chatbot.ChatbotMessage.TOPIC, CardBotHandler(logger)
     )
     client.start_forever()

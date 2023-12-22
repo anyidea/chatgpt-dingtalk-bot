@@ -88,3 +88,4 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:${{ steps.get_version.outputs.version-without-v }}
             ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk-bot:api

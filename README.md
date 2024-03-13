@@ -84,8 +84,9 @@ aidenlu/chatgpt-dingtalk-bot:latest
 > **gpt-4**模型需要用户已开通访问权限，
 
 
-### 配置第三方API URL
+### 支持第三方API URL
 设置环境变量`GPT_API_URL=https://example.com/v1/chat/completions` 即可
+
 
 ### 配置钉钉机器人
 1. 在钉钉管理后台添加企业内部应用(需要有管理后台权限)

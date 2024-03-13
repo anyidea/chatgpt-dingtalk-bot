@@ -24,7 +24,7 @@ revchatgpt = "^6.8.6"
 httpx = { extras = ["socks"], version = "^0.23.3" }
 python-dotenv = "^0.21.1"
 databases = { extras = ["aiosqlite"], version = "^0.7.0" }
-dingtalk-stream = "^0.15.2"
+dingtalk-stream = "^0.17.0"
 pydantic = "^1.10.9"
 tiktoken = "^0.5.2"
 requests = "^2.31.0"

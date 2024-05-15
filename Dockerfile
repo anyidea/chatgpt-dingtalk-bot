@@ -12,18 +12,16 @@ ARG POETRY_VERSION
 WORKDIR ${APP_HOME}
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=true
-ENV PATH="/root/.cargo/bin:/root/.local/bin:${PATH}"
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 
 # Install apt packages
 RUN apt-get update --fix-missing && apt-get install --no-install-recommends -y \
   # dependencies for building Python packages
-  build-essential \
-  # dependencies for installing poetry
-  pipx
+  build-essential
 
 # Speed up installing poetry
-RUN pipx install poetry==${POETRY_VERSION} \
+RUN python3 -m pip install -U pip && python3 -m pip install poetry==${POETRY_VERSION} \
     && poetry --version
 
 # Requirements are installed here to ensure they will be cached.

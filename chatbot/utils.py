@@ -11,6 +11,8 @@ ENGINES.extend(
         "gpt-3.5-turbo-instruct-0914",
         "gpt-4-1106-preview",
         "gpt-4-vision-preview",
+        "gpt-4o",
+        "gpt-4o-2024-05-13",
     ]
 )
 

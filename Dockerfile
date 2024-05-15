@@ -25,7 +25,7 @@ RUN apt-get update --fix-missing && apt-get install --no-install-recommends -y \
 # Speed up installing poetry
 RUN pipx install poetry==${POETRY_VERSION} \
     && pipx ensurepath \
-    && source ~/.bashrc \
+    && export PATH=$PATH:/root/.local/bin \
     && poetry --version
 
 # Requirements are installed here to ensure they will be cached.

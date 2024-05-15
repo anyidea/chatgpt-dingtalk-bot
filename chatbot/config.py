@@ -12,7 +12,7 @@ class ChatGPTSettings(BaseSettings):
     reply_count: Optional[int] = None
     truncate_limit: Optional[int] = None
     proxy: Optional[str] = None
-    model: Optional[str] = "gpt-3.5-turbo"
+    model: Optional[str] = "gpt-4o"
 
     class Config:
         env_file = ".env"

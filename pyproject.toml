@@ -1,7 +1,6 @@
 [tool.poetry]
 name = "chatgpt-dingtalk-bot"
 version = "0.6.3"
-package-mode = false
 homepage = "https://github.com/anyidea/chatgpt-dingtalk-bot"
 description = "A dingtalk chatbot powered by chatGPT.."
 authors = ["Aiden Lu <allaher@icloud.com>"]
